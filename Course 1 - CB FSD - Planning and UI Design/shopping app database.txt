@@ -11,3 +11,12 @@ insert into user values('steven@gmail.com','steven@123','customer');
 insert into user values('leena@gmail.com','leena@123','customer');
 
 select * from user;
+
+create table product(pid int primary key, 
+				pname varchar(50) not null, 
+				price float, 
+				description text,
+				stock int, 
+				created_at timestamp default current_timestamp);
+
+desc product;
