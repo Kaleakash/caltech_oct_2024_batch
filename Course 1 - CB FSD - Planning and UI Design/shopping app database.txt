@@ -29,4 +29,25 @@ insert into product(pid,pname,price,description,stock) values(104,'Tablet',199.9
 
 select * from product;
 
+create table orders(oid int primary key auto_increment, 
+			      uid varchar(30), 
+			      order_date timestamp default current_timestamp,
+			      total float, 
+			      status Enum('Pending','Shipped','Delivered','Cancelled') default 'Pending',
+			      foreign key(uid) references user(emailid));
+				
+desc orders;
 
+insert into orders(uid,total) values('steven@gmail.com',350);
+insert into orders(uid,total) values('steven@gmail.com',450);
+insert into orders(uid,total) values('leena@gmail.com',140);
+insert into orders(uid,total) values(null,100);
+insert into orders(uid,total) values('john@gmail.com',100);					error 
+insert into orders(uid,total,status) values('leena@gmail.com',100,'Delivered');	
+
+update orders set status='Shipped' where oid=1;			we can change the status 
+
+
+
+
+	
