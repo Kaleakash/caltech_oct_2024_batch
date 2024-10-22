@@ -20,3 +20,10 @@ create table product(pid int primary key,
 				created_at timestamp default current_timestamp);
 
 desc product;
+
+insert into product(pid,pname,price,description,stock) values(100,'Laptop',999.99,'High performance with 32 gb ram',50);
+insert into product(pid,pname,price,description,stock) values(101,'Smartphone',340.99,'Fitness tracker over ear phone',25);
+insert into product(pid,pname,price,description,stock) values(102,'Webcam',45.99,'HD Web cam',10);
+insert into product(pid,pname,price,description,stock) values(103,'Pen Drive'16 gb Memory',100);
+insert into product(pid,pname,price,description,stock) values(104,'Tablet',199.99,'10-inch tablet with full HD display',15);
+
