@@ -1,0 +1,13 @@
+create database shopping_app;
+
+use  shopping_app;
+
+show tables;
+
+create table user(emailid varchar(30) primary key, password varchar(30) not null, typeofuser enum('customer','admin'));
+
+insert into user values('admin@gmail.com','admin@123','admin');
+insert into user values('steven@gmail.com','steven@123','customer');
+insert into user values('leena@gmail.com','leena@123','customer');
+
+select * from user;
