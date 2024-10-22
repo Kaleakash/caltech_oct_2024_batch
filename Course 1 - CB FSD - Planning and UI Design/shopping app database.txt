@@ -47,6 +47,21 @@ insert into orders(uid,total,status) values('leena@gmail.com',100,'Delivered');
 
 update orders set status='Shipped' where oid=1;			we can change the status 
 
+create table orderitem(oitemid int primary key auto_increment, 
+				   oid int, 
+				   pid int, 
+	                           qty int, 
+                                   amount int, 
+				   foreign key(oid) references orders(oid),
+			           foreign key(pid) references product(pid));
+
+insert into orderitem(oid,pid,qty,amount) values(1,100,2,999.99);
+insert into orderitem(oid,pid,qty,amount) values(1,101,5,340.99);
+insert into orderitem(oid,pid,qty,amount) values(2,104,5,199.99);
+insert into orderitem(oid,pid,qty,amount) values(2,110,5,199.99);				error no product with pid as 110
+insert into orderitem(oid,pid,qty,amount) values(10,100,5,199.99);				error no order id with oid as 10 
+
+
 
 
 
