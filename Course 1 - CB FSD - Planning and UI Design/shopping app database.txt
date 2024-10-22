@@ -55,11 +55,49 @@ create table orderitem(oitemid int primary key auto_increment,
 				   foreign key(oid) references orders(oid),
 			           foreign key(pid) references product(pid));
 
+desc orderitem;					to check table structure 
+	
 insert into orderitem(oid,pid,qty,amount) values(1,100,2,999.99);
 insert into orderitem(oid,pid,qty,amount) values(1,101,5,340.99);
 insert into orderitem(oid,pid,qty,amount) values(2,104,5,199.99);
 insert into orderitem(oid,pid,qty,amount) values(2,110,5,199.99);				error no product with pid as 110
 insert into orderitem(oid,pid,qty,amount) values(10,100,5,199.99);				error no order id with oid as 10 
+
+
+
+select * from orderitem;				to check all records present in table. 
+
+
+create table accounts(accno int primary key, 
+				userid varchar(30), 
+				uname varchar(30) not null, 
+				balance float,  
+				foreign key(userid) references user(emailid));
+
+desc accounts;
+
+insert into accounts values(110011,'steven@gmail.com','steven',250);
+insert into accounts values(110012,'leena@gmail.com','leena',210);
+insert into accounts values(110013,null,'John',290);
+insert into accounts values(110014,'ajay@gmail.com','Ajay',150);		emailid not present in user table 
+
+
+select * from accounts;
+
+create table payment(pid int primary key auto_increment, 
+				oid int, 
+				paymentdate timestamp default current_timestamp, 
+				amount float,  
+				paymentmethod enum('Credit Card','Paypal','Net Banking','Bank Transfer'), 
+				foreign key(oid) references orders(oid));
+
+desc payment 
+
+insert into payment(oid,amount,paymentmethod) values(1,250,'Paypal');
+insert into payment(oid,amount,paymentmethod) values(2,350,'Credit Card');
+insert into payment(oid,amount,paymentmethod) values(3,180,'Net Banking');
+insert into payment(oid,amount,paymentmethod) values(10,240,'Net Banking');		no order is as 10 ie error 
+
 
 
 
