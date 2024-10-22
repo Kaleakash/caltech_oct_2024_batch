@@ -99,6 +99,18 @@ insert into payment(oid,amount,paymentmethod) values(3,180,'Net Banking');
 insert into payment(oid,amount,paymentmethod) values(10,240,'Net Banking');		no order is as 10 ie error 
 
 
+inner join with user and account table 
+
+select emailid,typeofuser,accno,balance from user inner join accounts on emailid=userid;
+
+
+if table contains common column name ie PK in one table and FK in another table then we need to use table alias 
+
+select p.pid,p.pname,p.description,ot.qty from product p inner join orderitem ot on p.pid=ot.pid;
+
+here p is table alias for product and ot is table alias for orderitem table.  
+
+
 
 
 
