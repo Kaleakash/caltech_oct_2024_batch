@@ -146,10 +146,25 @@ select upper('akash');
 
 select lower('AKASH');
 
+
 select count(pid) as total_record from product;
 
 select sum(price) as total_price, max(price) as max_price, min(price) as min_price, avg(price) as avg from product;
 
 select sum(price*stock) as total_price, max(price) as max_price, min(price) as min_price, avg(price) as avg from product;
+
+
+all order total
+
+select sum(total) from orders;		
+
+sub group total by uid 
+
+select uid,sum(total) from orders group by uid;	
+
+
+sub group by status 
+
+select status,count(oid) from orders group by status;
 
 
