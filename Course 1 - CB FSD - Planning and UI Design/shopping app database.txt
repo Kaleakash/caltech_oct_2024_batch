@@ -144,11 +144,11 @@ function
 
 select upper('akash');
 
-select lower('AKASH')
+select lower('AKASH');
 
 select count(pid) as total_record from product;
 
-select sum(price) as total_price, max(price) as max_price, min(price) as min_price, avg(price) as avg from product
+select sum(price) as total_price, max(price) as max_price, min(price) as min_price, avg(price) as avg from product;
 
 select sum(price*stock) as total_price, max(price) as max_price, min(price) as min_price, avg(price) as avg from product;
 
