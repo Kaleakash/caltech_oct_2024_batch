@@ -127,3 +127,12 @@ select emailid,typeofuser,accno,balance from user right outer join accounts on e
 
 
 	
+select * from product 
+
+select * from orderitem 
+
+select p.pname,p.price,ot.oid,ot.amount from product p inner join orderitem ot on p.pid=ot.pid;
+
+select p.pname,p.price,ot.oid,ot.amount from product p left outer join orderitem ot on p.pid=ot.pid;
+
+select p.pname,p.price,ot.oid,ot.amount from product p right outer join orderitem ot on p.pid=ot.pid;
