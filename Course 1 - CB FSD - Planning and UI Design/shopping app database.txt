@@ -112,7 +112,18 @@ here p is table alias for product and ot is table alias for orderitem table.
 
 
 
+------------------------------------------------------
 
+select * from user;
+
+select * from account;
+
+
+select emailid,typeofuser,accno,balance from user inner join accounts on emailid=userid;
+
+select emailid,typeofuser,accno,balance from user left outer join accounts on emailid=userid;
+
+select emailid,typeofuser,accno,balance from user right outer join accounts on emailid=userid;
 
 
 	
