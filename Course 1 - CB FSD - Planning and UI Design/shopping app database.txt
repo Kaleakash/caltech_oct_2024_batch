@@ -136,3 +136,20 @@ select p.pname,p.price,ot.oid,ot.amount from product p inner join orderitem ot o
 select p.pname,p.price,ot.oid,ot.amount from product p left outer join orderitem ot on p.pid=ot.pid;
 
 select p.pname,p.price,ot.oid,ot.amount from product p right outer join orderitem ot on p.pid=ot.pid;
+
+
+
+function 
+
+
+select upper('akash');
+
+select lower('AKASH')
+
+select count(pid) as total_record from product;
+
+select sum(price) as total_price, max(price) as max_price, min(price) as min_price, avg(price) as avg from product
+
+select sum(price*stock) as total_price, max(price) as max_price, min(price) as min_price, avg(price) as avg from product;
+
+
