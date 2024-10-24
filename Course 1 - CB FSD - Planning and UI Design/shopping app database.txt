@@ -184,3 +184,18 @@ higher to lower base upon price
 
 select * from product order by price desc;
 
+
+Transaction successfully executed. 
+
+start transaction
+update accounts set balance= balance-100 where accno=110011;
+update accounts set balance= balance+100 where accno=110012;
+select * from accounts;
+commit;
+
+Transaction failure. 
+ start transaction
+update accounts set balance= balance-50 where accno=110011;
+update accounts set balance= balance+50 where accno=110015;
+select * from accounts;
+rollback;
