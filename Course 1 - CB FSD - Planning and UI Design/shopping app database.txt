@@ -168,3 +168,19 @@ sub group by status
 select status,count(oid) from orders group by status;
 
 
+group by using paymentmethod 
+
+select paymentmethod,sum(amount) total_amount,count(pid) total_transaction from payment group by paymentmethod;
+
+
+
+order by clause 
+
+Lower to higher base upon price 
+
+select * from product order by price asc;
+
+higher to lower base upon price 
+
+select * from product order by price desc;
+
