@@ -1,16 +1,21 @@
-create database shopping_app;
+create database eshopping;
 
-use  shopping_app;
+use  eshopping;
 
 show tables;
 
-create table user(emailid varchar(30) primary key, password varchar(30) not null, typeofuser enum('customer','admin'));
+create table user(emailid varchar(30) primary key, password varchar(30) not null, typeofuser enum('customer','admin','manager'));
 
 insert into user values('admin@gmail.com','admin@123','admin');
+insert into user values('manager1@gmail.com','manager1@123','manager');
+insert into user values('manager2@gmail.com','manager2@123','manager');
 insert into user values('steven@gmail.com','steven@123','customer');
 insert into user values('leena@gmail.com','leena@123','customer');
 
+try to insert more customer details 
+
 select * from user;
+
 
 create table product(pid int primary key, 
 				pname varchar(50) not null, 
@@ -27,6 +32,8 @@ insert into product(pid,pname,price,description,stock) values(102,'Webcam',45.99
 insert into product(pid,pname,price,description,stock) values(103,'Pen Drive',49.99,'16 gb Memory',100);
 insert into product(pid,pname,price,description,stock) values(104,'Tablet',199.99,'10-inch tablet with full HD display',15);
 
+in product table insert few more records 
+
 select * from product;
 
 create table orders(oid int primary key auto_increment, 
@@ -42,8 +49,11 @@ insert into orders(uid,total) values('steven@gmail.com',350);
 insert into orders(uid,total) values('steven@gmail.com',450);
 insert into orders(uid,total) values('leena@gmail.com',140);
 insert into orders(uid,total) values(null,100);
-insert into orders(uid,total) values('john@gmail.com',100);					error 
 insert into orders(uid,total,status) values('leena@gmail.com',100,'Delivered');	
+
+
+insert few more orders details. 
+
 
 update orders set status='Shipped' where oid=1;			we can change the status 
 
@@ -60,9 +70,8 @@ desc orderitem;					to check table structure
 insert into orderitem(oid,pid,qty,amount) values(1,100,2,999.99);
 insert into orderitem(oid,pid,qty,amount) values(1,101,5,340.99);
 insert into orderitem(oid,pid,qty,amount) values(2,104,5,199.99);
-insert into orderitem(oid,pid,qty,amount) values(2,110,5,199.99);				error no product with pid as 110
-insert into orderitem(oid,pid,qty,amount) values(10,100,5,199.99);				error no order id with oid as 10 
 
+insert few more orderitem base upon products 
 
 
 select * from orderitem;				to check all records present in table. 
@@ -79,7 +88,6 @@ desc accounts;
 insert into accounts values(110011,'steven@gmail.com','steven',250);
 insert into accounts values(110012,'leena@gmail.com','leena',210);
 insert into accounts values(110013,null,'John',290);
-insert into accounts values(110014,'ajay@gmail.com','Ajay',150);		emailid not present in user table 
 
 
 select * from accounts;
@@ -96,7 +104,9 @@ desc payment
 insert into payment(oid,amount,paymentmethod) values(1,250,'Paypal');
 insert into payment(oid,amount,paymentmethod) values(2,350,'Credit Card');
 insert into payment(oid,amount,paymentmethod) values(3,180,'Net Banking');
-insert into payment(oid,amount,paymentmethod) values(10,240,'Net Banking');		no order is as 10 ie error 
+
+insert few more payment details. 
+
 
 
 inner join with user and account table 
