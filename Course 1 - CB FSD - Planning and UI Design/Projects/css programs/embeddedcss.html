@@ -6,23 +6,32 @@
     <title>Document</title>
     <style type="text/css">
   /*   *{color: red;}    CSS comments  */
-    p{color: red;}
+ /*   p{color: red;}
     h1{color: gold;}
     h2{color: aqua;}
     b{color: yellow;}
-    </style>
+
+h3,h4{background-color: yellowgreen;color: whitesmoke;}*/
+
+/*h4{background-color: yellowgreen;color: whitesmoke;}*/
+
+.globalClass{color:red}
+p.localP1Class{color:orange}
+p.localP2Class{color:blue;}
+
+</style>
 </head>
 <body>
-        <h1>This is h1 tag</h1>
-        <h2>This is h2 tag</h2>
-        <h3>This is h3 tag</h3>
+        <h1 class="globalClass">This is h1 tag</h1>
+        <h2 class="localP1Class">This is h2 tag</h2>
+        <h3 class="globalClass">This is h3 tag</h3>
         <h4>This is h4 tag</h4>
         <h5>This is h5 tag</h5>
         <h6>This is h6 tag</h6>
-    <p>This is p tag</p>
+    <p class="globalClass">This is p tag</p>
     <b>This is bold tag</b>
     <i>This is italic tag</i>
-    <p>This is <span>p tag </span>with <span> Tag content</span> </p>
+    <p class="localP1Class">This is <span>p tag </span>with <span> Tag content</span> </p>
     <div>
         <h1>This is h1 part of div tag</h1>
         <h2>This is h2 part of div tag</h2>
@@ -35,7 +44,7 @@
     <h4>This is h4 tag</h4>
     <h5>This is h5 tag</h5>
     <h6>This is h6 tag</h6>
-<p>This is p tag</p>
+<p class="localP2Class">This is p tag</p>
 <b>This is bold tag</b>
 <i>This is italic tag</i>
 <p>This is <span>p tag </span>with <span> Tag content</span> </p>
