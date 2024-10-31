@@ -1,0 +1,17 @@
+*{
+    margin: 0px;
+}
+h1{
+    color: red;
+}
+p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12pt;
+    color: #99cc33;
+}
+div{
+    border-width: 1px;
+}
+span{
+    color: rgb(10, 100, 255);
+}
