@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/JavaScript">
+        function fun1() {
+            console.log("event fired with single click")    
+        }
+        function fun4() {
+            console.log("event fired with double click")    
+        }
+        function fun2() {
+            console.log("You released the key")    
+        }
+        function fun3() {
+            console.log("You pressed the key")    
+        }
+        function fun5() {
+            console.log("Your cursor on image")    
+        }
+        function fun6() {
+            console.log("You cursor outside / off image")    
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="Click Here!" onclick="fun1()" ondblclick="fun4()"/><br/>
+    <input type="text" name="fname" onkeyup="fun2()" onkeydown="fun3()"/><br/>
+    <img src="image1.jpg" width="100px" height="100px"onmouseover="fun5()" onmouseout="fun6()"/>
+</body>
+</html>
