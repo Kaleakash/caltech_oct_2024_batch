@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/JavaScript">
+        function info() {
+            alert("Welcome to User defined info function")
+        }
+        function addNumber(a,b){
+                var sum = a+b;
+                alert("Sum of two number is "+sum);
+        }
+        function checkLoginDetails(emailid,password){
+            if(emailid=="akash@gmail.com" && password=="123"){
+                return "Successfully login";
+            }else {
+                return "Failure try once again"
+            }
+        }
+        //info();
+    </script>
+</head>
+<body>
+    <script type="text/JavaScript">
+       info();
+       addNumber(1,2);
+       addNumber(100,200);
+       var result = checkLoginDetails("akash@gmail.com","1235")
+       alert("In main script "+result)
+    </script>
+</body>
+</html>
