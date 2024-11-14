@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        var a=10;
+        a=20;               // re-initialization 
+        var a="steven";     // re-declaration 
+        document.write("<br/>Value of a is "+a)
+        let b=10;   
+        b=20;           // re-initialization 
+        //let b="steven"; // re-declaration error 
+        document.write("<br/>Value of b is "+b) 
+        for(var i=0;i<10000;i++){
+
+        }  
+        document.write("<br/> Value of i is "+i); 
+        for(let j=0;j<10000;j++){
+
+        }  
+        //document.write("<br/> Value of j is "+j); error we can't access j outside loop.
+        const c=1000;
+        //c=4000;               // Error we can't change the value. 
+        document.write("<br/> Value of c is "+c)
+    </script>
+</body>
+</html>
