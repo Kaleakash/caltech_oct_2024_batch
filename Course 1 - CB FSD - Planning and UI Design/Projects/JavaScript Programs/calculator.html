@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/JavaScript">
+        function add() {
+            var a = document.getElementById("n1").value;
+            var b = document.getElementById("n2").value;
+            var sum = eval(a)+eval(b);
+            document.getElementById("result").value=sum;
+            document.getElementById("n1").value=""
+            document.getElementById("n2").value=""
+        }
+        function sub() {
+            var a = document.getElementById("n1").value;
+            var b = document.getElementById("n2").value;
+            var sub = eval(a)-eval(b);
+            document.getElementById("result").value=sub;
+            document.getElementById("n1").value=""
+            document.getElementById("n2").value=""
+        }
+    </script>
+</head>
+<body>
+    <h3>Simple Online Calculator</h3>
+    <div>
+        <span>1st Number</span>
+        <input type="number" id="n1"/><br/>
+        <span>2nd Number</span>
+        <input type="number" id="n2"/><br/>
+        <span>Output</span>
+        <input type="text" id="result" readonly/><br/>
+        <input type="button" value="Add" onclick="add()"/>
+        <input type="button" value="Sub" onclick="sub()"/>
+    </div>
+</body>
+</html>
