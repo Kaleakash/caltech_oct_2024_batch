@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/JavaScript">
+       // normal style function 
+       display1();
+       function display1() {
+            alert("display1 function - normal style")
+       } 
+       display1();
+
+
+       // expression style function 
+       //display2();
+       let display2 = function() {
+            alert("display2 function - expression style function")
+       } 
+       display2();
+
+       let display3 = ()=>alert("Arrow style function")
+       display3();
+
+       // addition of two number using expression style 
+       let addNumber1 = function(a,b) {
+            let sum = a+b;
+            return sum;
+       }
+       // addition of two number using arrow style 
+       let addNumber2 = (a,b)=>a+b;
+    </script>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //display1();
+        //display2();
+        let result1 = addNumber1(100,200)
+        alert("Result using expression style "+result1)
+        let result2 = addNumber2(100,200);
+        alert("Result using arrow style "+result2)
+    </script>
+</body>
+</html>
