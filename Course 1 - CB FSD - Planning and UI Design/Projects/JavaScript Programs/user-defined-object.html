@@ -8,16 +8,28 @@
 <body>
     <script type="text/JavaScript">
         // literal style object creation 
-        var product1 ={pid:100,pname:"TV",price:45000};
-        var product2 ={pid:101,pname:"Computer",price:32000};
+var product1 ={pid:100,pname:"TV",price:45000,order:{oid:1212,amount:450,orderDate:new Date()}};
+var product2 ={pid:101,pname:"Computer",price:32000,orders:[
+    {oid:1213,amount:670,orderDate:new Date()},
+    {oid:1214,amount:940,orderDate:new Date()}    
+]};
         document.write("1st Product details")
         document.write("<br/> Product Id is "+product1.pid)
         document.write("<br/> Product Name is "+product1.pname)
         document.write("<br/> Product Price is "+product1.price)
+        document.write("<br/> Product Order Id "+product1.order.oid)
+        document.write("<br/> Product Order Amount "+product1.order.amount)
+        document.write("<br/> Product Order Date "+product1.order.orderDate)
         document.write("<br/>2nd Product details")
         document.write("<br/> Product Id is "+product2.pid)
         document.write("<br/> Product Name is "+product2.pname)
         document.write("<br/> Product Price is "+product2.price)
+        document.write("<br/> Product 1st Order Id "+product2.orders[0].oid)
+        document.write("<br/> Product 1st Order Amount "+product2.orders[0].amount)
+        document.write("<br/> Product 1st Order Date "+product2.orders[0].orderDate)
+        document.write("<br/> Product 2nd Order Id "+product2.orders[1].oid)
+        document.write("<br/> Product 2nd Order Amount "+product2.orders[1].amount)
+        document.write("<br/> Product 2nd Order Date "+product2.orders[1].orderDate)
     </script>
 </body>
 </html>
