@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Array object with pre defined method</h2>
+    <script type="text/JavaScript">
+        let num1=[];
+        let num2=new Array();
+        let num3=[10,20,30,40,50];          // let a=10;a=20;
+        let num4=new Array(10,20,30,40,50,60,70,80,90,100,110,120);
+        document.write("<br/> Size of num1 is "+num1.length)
+        document.write("<br/> Size of num2 is "+num2.length)
+        document.write("<br/> Size of num3 is "+num3.length)
+        document.write("<br/> Size of num4 is "+num4.length)
+        document.write("<br/> 1st element from num3 is "+num3[0])           // access through index position
+        document.write("<br/> 3rd element from num4 is "+num3[2])
+        document.write("<br/> All elements from num3 is "+num3);            // consider as string and separated by
+        document.write("<br/> All elements from num3 is "+num3.join("=>")); 
+        document.write("<br/> Retrieve elements from array")
+        for(let i=0;i<num4.length;i++){
+            document.write("<br/> Value is "+num4[i]);
+        }
+    </script>
+</body>
+</html>
