@@ -16,6 +16,7 @@ let addProduct=function(){
    // displayProduct();
 }
 let displayProduct = function() {
+    
     for(let p of products){
     let pTag = document.createElement("p");                 // it create p tag 
 let pTagValue = document.createTextNode(p.pid+" "+p.pname+" "+p.price)  // it create content 

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        let names = ["Steven","Lex","Mahesh","John"];
+        
+        // 1st way 
+        function displayNames1(name){
+            document.write("<br/>name is "+name)
+        }
+        // 2nd way 
+        let displayNames2 = function(name){
+            document.write("<br/>name is "+name)
+        }
+        // 3rd 
+        let displayNames3 = (name)=>document.write("<br/> name is "+name)
+        
+        //names.forEach(displayNames3);
+        names.forEach((name)=>document.write("<br/> name is "+name));   // passing function body.
+        names.map(name=>name.toUpperCase()).forEach((name)=>document.write("<br/> "+name));
+        names.filter(name=>name.includes("e")).forEach((name)=>document.write("<br/> "+name));
+    </script>
+</body>
+</html>
