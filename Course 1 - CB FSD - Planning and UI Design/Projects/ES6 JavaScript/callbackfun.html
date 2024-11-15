@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        function greeting(fname,callback){
+                return "Welcome "+callback(fname);
+        }
+
+        let maleInfo = function(fname){
+            return "Mr "+fname;
+        }
+
+        let femaleInfo = (fname)=>"Miss "+fname;
+    document.write(greeting("Steven",maleInfo))
+        document.write("<br/>")
+        document.write(greeting("Leena",femaleInfo))
+        document.write("<br/>")
+    document.write(greeting("Raj",function(fname){
+            return "Mr "+fname;
+        }))
+        document.write("<br/>")
+        document.write(greeting("Meeta",(fname)=>"Miss "+fname));
+    </script>
+</body>
+</html>
