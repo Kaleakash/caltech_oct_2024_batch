@@ -37,6 +37,18 @@
             num2.push(i+100);
         } 
         document.write("<br/> all elements from num2 is "+num2)
+        document.write("<br/> using classical for loop")
+        for(let i=3;i<7;i++){
+            document.write("<br/> Value = "+num2[i])
+        }
+        document.write("<br/> using for in loop")
+        for(let index in num2){
+            document.write("<br/> Index "+index+" Value is "+num2[index])
+        }
+        document.write("<br/> using for of loop")
+        for(let num of num2){
+            document.write("<br/> Value is "+num)
+        }
     </script>
 </body>
 </html>
