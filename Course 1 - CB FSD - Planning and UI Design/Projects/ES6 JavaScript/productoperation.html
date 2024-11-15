@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="productoperation.js"></script>
+</head>
+<body>
+    <form>
+        <label>PId</label>
+        <input type="number" id="pid"/><br/>
+        <label>PName</label>
+        <input type="text" id="pname"/><br/>
+        <label>Price</label>
+        <input type="number" id="price"/><br/>
+        <input type="button" value="Add Product" onclick="addProduct()"/>
+        <input type="button" value="Display Product" onclick="displayProduct()"/>
+        <input type="button" value="Remove 1st Product" onclick="removeFirstProduct()"/>
+        <input type="button" value="Remove last Product" onclick="removeLastProduct()"/>
+        <input type="reset" value="reset"/>
+    </form>
+    <hr/>
+    <div id="output">
+
+    </div>
+</body>
+</html>
