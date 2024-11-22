@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class EventBindingComponent {
   msg:string="";
+  
   message:string="";
   sayHello(): void {
     alert("function called...")
@@ -15,6 +16,7 @@ export class EventBindingComponent {
   showMessage():void {
     this.msg="Welcome to Angular Application";
   }
+  
   sendName(name:any):void {
     console.log(name)
     let fname = name.value; // name object and value is property 

@@ -11,10 +11,11 @@
 
     {{msg}}
     <br/>
-    Name :<input type="text" #nameRef/>
+    Name :<input type="text" #nameRef 
+    (keyup)="sendName(nameRef)"/>
     <br/>
     <input type="button" value="Send Name" 
-    (click)="sendName(nameRef)"/>
+    ((click))="sendName(nameRef)"/>
     <br/>
     {{message}}
 </div>
