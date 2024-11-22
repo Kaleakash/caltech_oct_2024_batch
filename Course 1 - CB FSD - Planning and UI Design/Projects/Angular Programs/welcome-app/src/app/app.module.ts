@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { StringInterpolationComponent } from './string-interpolation/string-interpolation.component';
+import { EventBindingComponent } from './event-binding/event-binding.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    StringInterpolationComponent
+    StringInterpolationComponent,
+    EventBindingComponent
   ],
   imports: [
     BrowserModule
