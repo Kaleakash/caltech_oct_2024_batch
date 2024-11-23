@@ -1,0 +1,16 @@
+<div>
+    <h3>Data binding using String interpolation</h3>
+    <p>Id is {{id}} Name is {{fname}}</p>
+    <input type="button" value="Change Value" (click)="changeValue()"/>
+    <br/>
+    <h2>Simple Calculator</h2>
+    <form>
+        <label>1st Number</label>
+        <input type="text" #n1/><br/>
+        <label>2nd Number</label>
+        <input type="text" #n2/><br/>
+        <input type="button" value="Add" (click)="add(n1,n2)"/>
+        <input type="button" value="Sub" (click)="sub(n1,n2)"/>
+    </form>
+    {{result}}
+</div>
