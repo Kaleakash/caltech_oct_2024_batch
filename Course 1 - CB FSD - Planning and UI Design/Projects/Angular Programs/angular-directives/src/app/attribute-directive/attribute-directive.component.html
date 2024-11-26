@@ -1,1 +1,16 @@
-<p>attribute-directive works!</p>
+<div>
+    <h3>Attribute Directive</h3>
+    <p style="background-color: red;">
+        Apply Styling using inline CSS</p>
+    <p [ngStyle]="styleValues">Apply Styling 
+        using ngStyle</p>
+    <p class="firstClass">Apply CSS Effect using Css with class selector</p>
+    <p class="secondClass">Apply CSS Effect using Css with class selector</p>
+    <p [ngClass]="{firstClass:true}">Apply CSS effect using ngClass</p>
+    <p [ngClass]="{firstClass:false}">Apply CSS effect using ngClass</p>
+    
+    <p [ngClass]="{firstClass:f1,secondClass:f2}" 
+    (mouseover)="fun1()"
+    (mouseleave)="fun2()">
+    Apply CSS effect using ngClass</p>
+</div>
