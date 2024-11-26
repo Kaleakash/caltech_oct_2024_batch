@@ -1,1 +1,13 @@
-<p>mdf-login-page works!</p>
+<div>
+    <h3>Login Page using Model Driven Form</h3>
+    <form [formGroup]="loginRef" (ngSubmit)="checkLoginDetials()">
+        <label>EmailId</label>
+        <input type="email" formControlName="emailid"/><br/>
+        <label>Password</label>
+        <input type="password" formControlName="password"/><br/>
+        <input type="submit" value="SignIn"/>
+        <input type="reset" value="reset"/>
+    </form>
+    <br/>
+    <span style="color:red">{{msg}}</span>
+</div>
