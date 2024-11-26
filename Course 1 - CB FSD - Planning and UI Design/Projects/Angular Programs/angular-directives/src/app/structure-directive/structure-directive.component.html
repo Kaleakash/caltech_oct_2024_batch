@@ -8,4 +8,11 @@
         event</p>
     <input type="button" value="Click Here" 
     (click)="changeValue()"/>
+    <br/>
+    <input type="text" #n1/>
+    <input type="button" value="Add Name"
+    (click)="addNames(n1)"/>
+    <ul>
+        <li *ngFor="let name of names">{{name}}</li>
+    </ul>
 </div>

@@ -9,6 +9,7 @@ export class StructureDirectiveComponent {
 f1:boolean=true;
 f2:boolean=false;
 f3:boolean = true;
+names:Array<string>=["Steven","Lex","Raj"]
 
 changeValue():void {
   if(this.f3){
@@ -16,6 +17,9 @@ changeValue():void {
   }else {
     this.f3=true;
   }
+}
+addNames(nameref:any):void {
+  this.names.push(nameref.value);
 }
 
 }
