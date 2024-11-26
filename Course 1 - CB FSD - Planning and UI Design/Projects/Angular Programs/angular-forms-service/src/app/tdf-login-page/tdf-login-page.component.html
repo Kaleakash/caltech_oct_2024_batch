@@ -1,0 +1,13 @@
+<div>
+    <h3>Login Page using Template Driven Form</h3>
+    <form #loginRef="ngForm" (ngSubmit)="checkLoginDetails(loginRef)">
+        <label>EmailId</label>
+            <input type="email" name="emailid" ngModel/><br/>
+        <label>Password</label>
+            <input type="password" name="password" ngModel/><br/>
+        <input type="submit" value="SignIn"/>
+        <input type="reset" value="reset"/>
+    </form>
+    <br/>
+    <span style="color: red;">{{msg}}</span>
+</div>
