@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-
   constructor(public http:HttpClient) { }   // DI for HttpClient API. 
 
   loadFakeDataDisplayOnConsole(): void {
@@ -16,7 +14,7 @@ export class ProductService {
       error:(error:any)=>console.log(error),
 
       complete:()=>console.log("done!")
-      
+
     })
   }
 }
