@@ -1,3 +1,24 @@
 <div>
+    <p>Date Info {{dateInfo}}</p>
+    <p>Date Info {{dateInfo|date}}</p>
+    <p>Date Info {{dateInfo|date:'short'}}</p>
+    <p>Date Info {{dateInfo|date:'long'}}</p>
+    <p>Date Info {{dateInfo|date:'MM-dd-YYYY'}}</p>
     <input type="button" value="Load Product" (click)="loadProduct()"/>
+    <div *ngIf="flag">
+    <table border="1">
+        <tr>
+            <th>Product Id</th>
+            <th>Product Name</th>
+            <th>Product Price</th>
+            <th>URL</th>
+        </tr>
+        <tr *ngFor="let product of products">
+            <td>{{product.id}}</td>
+            <td>{{product.title |uppercase}}</td>
+            <td>{{product.price|currency:'INR'}}</td>
+            <td><img src={{product.image}} width="200px" height="200px"/></td>
+        </tr>
+    </table>
+    </div>
 </div>

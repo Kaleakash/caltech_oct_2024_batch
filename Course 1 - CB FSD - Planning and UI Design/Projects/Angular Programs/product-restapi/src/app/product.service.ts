@@ -23,6 +23,8 @@ export class ProductService {
     console.log("Hello")
     console.log("Hi")
   }
+  // retrieve json data and convert in js literal format. 
+  
   loadFakeProductAndDisplayOnBrowser():Observable<Product[]>{
     return this.http.get<Product[]>("https://fakestoreapi.com/products");
   }
