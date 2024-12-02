@@ -22,7 +22,7 @@ checkLoginDetails(): void {
   if(login.emailid == "admin@gmail.com" && login.password == "admin123"){
     alert("Login Successful");
     sessionStorage.setItem("emailid",login.emailid)
-    this.router.navigate(["/home"]);
+    this.router.navigate(["/home"],{skipLocationChange:true});
   }else {
   alert("failure try once again")
   }
