@@ -18,13 +18,15 @@ constructor(public router:Router){      // DI for Router API
 }
 checkLoginDetails(): void {
   let login = this.loginRef.value;
+  // we can check with different emailid as well as password from backend 
   if(login.emailid == "admin@gmail.com" && login.password == "admin123"){
     alert("Login Successful");
+    sessionStorage.setItem("emailid",login.emailid)
     this.router.navigate(["/home"]);
   }else {
   alert("failure try once again")
   }
 
-  this.loginRef.reset();
+  this.loginRef.reset();      // clear emailid and password field. 
 }
 }
