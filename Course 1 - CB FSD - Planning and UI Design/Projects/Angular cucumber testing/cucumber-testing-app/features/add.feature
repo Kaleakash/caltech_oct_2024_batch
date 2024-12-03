@@ -7,4 +7,4 @@ Feature: Add Functionality
 
     When Doing the addition of two numbers 
 
-    Then Display the output of two numbers  
+    Then Display the output of two numbers
