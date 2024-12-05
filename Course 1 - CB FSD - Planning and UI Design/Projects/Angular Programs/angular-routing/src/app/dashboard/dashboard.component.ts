@@ -7,7 +7,9 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit{
   user:string ="";
-  constructor(public router:Router){}   // mainly use for DI. 
+  constructor(public router:Router){
+    
+  }   // mainly use for DI. 
   // it get called once component loaded...
   ngOnInit(): void {
       let obj = sessionStorage.getItem("emailid");
