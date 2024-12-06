@@ -2,7 +2,7 @@
 public class SwithStatementExample {
 
 	public static void main(String[] args) {
-	int choice=5;
+	int choice=1;
 	int a=10;
 	int b=5;
 	int add,sub,mul,div;
