@@ -8,8 +8,10 @@ public class AccountTest {
 		acc1.name="Steven";
 		acc1.amount=1400;
 		acc1.displayAccountInfo();
-		acc1.withdraw();
-		acc1.deposit();
+//		acc1.withdraw();
+//		acc1.deposit();
+		acc1.withdraw(120);
+		acc1.deposit(300);
 		System.out.println("Afer transaction");
 		acc1.displayAccountInfo();
 
@@ -18,8 +20,10 @@ public class AccountTest {
 		acc2.name="John";
 		acc2.amount=1800;
 		acc2.displayAccountInfo();
-		acc2.deposit();
-		acc2.deposit();
+//		acc2.deposit();
+//		acc2.deposit();
+		acc2.withdraw(160);
+		acc2.deposit(350);
 		System.out.println("Afer transaction");
 		acc2.displayAccountInfo();
 		//acc2.deposit();
