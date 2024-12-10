@@ -9,7 +9,11 @@ public class DynamicValueExample {
 		int b = sc.nextInt();
 		int sum = a+b;
 		System.out.println("sum is "+sum);
-
+		String name = "Steven";
+		System.out.println("name is "+name);
+		System.out.println("Enter the name");
+		String fname =sc.next();		// scan string value it scan on world
+		System.out.println("Your name is "+fname);
 	}
 
 }
