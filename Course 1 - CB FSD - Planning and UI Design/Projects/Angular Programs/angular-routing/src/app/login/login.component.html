@@ -5,10 +5,10 @@
     
     <form [formGroup]="loginRef" (ngSubmit)="checkLoginDetails()">
         <label>EmailId</label>
-        <input type="email" formControlName="emailid"/><br/>
+            <input type="email" formControlName="emailid" id="email"/><br/>
         <label>Password</label>
-        <input type="password" formControlName="password"/><br/>
-        <input type="submit" value="Login"/>
+            <input type="password" formControlName="password" id="password"/><br/>
+            <input type="submit" value="Login" id="submitButton"/>
         <input type="reset"/>
     </form>
 </div>

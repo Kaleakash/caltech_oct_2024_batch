@@ -27,9 +27,9 @@ checkLoginDetails(): void {
   // we can check with different emailid as well as password from backend 
   //alert(result);
   if(result){
-    alert("Login Successful");
+    //alert("Login Successful");
     sessionStorage.setItem("emailid",login.emailid)
-    this.router.navigate(["/home"],{skipLocationChange:true});
+    this.router.navigate(["/home"]);
   }else {
   alert("failure try once again")
   }
