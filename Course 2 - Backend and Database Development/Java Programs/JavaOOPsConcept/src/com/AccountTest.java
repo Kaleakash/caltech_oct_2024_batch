@@ -31,12 +31,20 @@ public class AccountTest {
 		System.out.println("In Main class");
 		
 		Account acc3 = new Account();
+//		acc3.accno=-2;
+//		acc3.name="John";
+//		acc3.amount=-1600;
+		acc3.setAccountInfo(2, "John", -16000);
 		acc3.displayAccountInfo();
 		
 		Account acc4 = new Account();
+//		acc3.accno=3;
+//		acc3.name="Leena";
+//		acc3.amount=1800;
+		acc3.setAccountInfo(3, "Leena", 18000);
 		acc4.displayAccountInfo();
 		
-		Account acc5 = new Account(1,"Steven",12000);
+		Account acc5 = new Account(1,"Steven",-12000);
 		acc5.displayAccountInfo();
 	}
 

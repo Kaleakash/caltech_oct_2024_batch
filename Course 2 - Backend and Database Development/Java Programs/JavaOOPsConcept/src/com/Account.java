@@ -1,8 +1,8 @@
 package com;
 public class Account {
-int accno;
-String name;
-float amount;
+private int accno;
+private String name;
+private float amount;
 // empty constructor 
 Account() {
 	System.out.println("Object created...");
@@ -14,7 +14,23 @@ Account() {
 Account(int accno, String name, float amount){
 	this.accno=accno;
 	this.name=name;
-	this.amount = amount;
+	//this.amount = amount;
+	if(amount<0) {
+		this.amount = 0;
+	}else {
+		this.amount = amount;
+	}
+}
+// this method help to set the value 
+void setAccountInfo(int accno, String name, float amount) {
+	this.accno=accno;
+	this.name=name;
+	//this.amount = amount;
+	if(amount<0) {
+		this.amount = 0;
+	}else {
+		this.amount = amount;
+	}
 }
 
 void withdraw() {
