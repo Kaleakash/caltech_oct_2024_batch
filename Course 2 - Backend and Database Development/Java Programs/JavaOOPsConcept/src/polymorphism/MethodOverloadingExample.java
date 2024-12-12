@@ -11,7 +11,7 @@ public class MethodOverloadingExample {
 	
 	op.add(100, 200);
 	
-	op.add(10.10f, 20.20f);
+	op.add(10.100000f, 20.2000006f);
 	
 	op.add("10", "20");
 	}
