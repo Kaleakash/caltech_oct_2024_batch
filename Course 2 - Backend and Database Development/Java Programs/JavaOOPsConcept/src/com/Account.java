@@ -3,6 +3,19 @@ public class Account {
 int accno;
 String name;
 float amount;
+// empty constructor 
+Account() {
+	System.out.println("Object created...");
+	this.accno=123;
+	this.name="Unkonwn";
+	this.amount=500;
+}
+//parameter constructor 
+Account(int accno, String name, float amount){
+	this.accno=accno;
+	this.name=name;
+	this.amount = amount;
+}
 
 void withdraw() {
 	System.out.println("Withdraw functionality ");
