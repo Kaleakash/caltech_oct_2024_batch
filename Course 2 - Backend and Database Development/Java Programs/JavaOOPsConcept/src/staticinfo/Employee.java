@@ -12,7 +12,8 @@ public class Employee {
 		System.out.println("static method");
 		System.out.println("Mgr id "+mgrid);
 		//System.out.println("id "+id);
-		Employee emp = new Employee();
-		System.out.println("id "+emp.id);
+		//Employee emp = new Employee();
+		//System.out.println("id "+emp.id);
 	}
+	//static abstract void info();
 }
