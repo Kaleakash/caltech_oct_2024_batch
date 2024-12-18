@@ -33,6 +33,4 @@ public Account(int accno, String name, float amount) {
 	this.amount = amount;
 }
 
-
-
 }
