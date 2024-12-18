@@ -4,5 +4,5 @@ import com.bank.bean.Account;
 
 public interface AccountService {
 // set of methods 
-	public String createAccount(Account accno);
+	public String createAccount(Account account);
 }
