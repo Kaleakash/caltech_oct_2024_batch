@@ -15,10 +15,11 @@ public class App {
 		int accno;
 		String name;
 		float amount;
+		
 		AccountServiceImp asi = new AccountServiceImp();
 		String result="";
 		do {
-			System.out.println("1:Account Create 2:View Account Details");
+			System.out.println("1:Account Create 2:View Account Details 3: find Balance");
 			System.out.println("Plz Enter your choice");
 			choice = sc.nextInt();
 			switch(choice) {
@@ -41,7 +42,16 @@ public class App {
 					break;
 					
 			case 2: System.out.println("Account Details");
+					asi.displayAllAccountDetails();
 					break;
+					
+			case 3: System.out.println("Enter the account number");
+			        accno = sc.nextInt();
+					result = asi.findAccountBalance(accno);
+					System.out.println(result);
+					break;
+					
+				
 			default :System.out.println("Wrong choice");
 				break;
 			}
