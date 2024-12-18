@@ -16,10 +16,14 @@ public class App {
 		String name;
 		float amount;
 		
+		System.out.println("How many account do you want to create");
+		int count = sc.nextInt();
+		AccountServiceImp.initAccountCreation(count);
+		
 		AccountServiceImp asi = new AccountServiceImp();
 		String result="";
 		do {
-			System.out.println("1:Account Create 2:View Account Details 3: find Balance");
+			System.out.println("1:Account Create 2:View Account Details 3: find Balance 4 : Withdraw 5 :Deposit");
 			System.out.println("Plz Enter your choice");
 			choice = sc.nextInt();
 			switch(choice) {
@@ -51,7 +55,24 @@ public class App {
 					System.out.println(result);
 					break;
 					
-				
+			case 4 :System.out.println("Withdraw Operation");
+					System.out.println("Enter the accno number");
+			        accno = sc.nextInt();
+			        System.out.println("Enter the amount");
+			        amount = sc.nextFloat();
+			        result = asi.withdraw(accno, amount);
+			        System.out.println(result);
+			        break;
+			        
+			case 5 :System.out.println("Deposit Operation");
+					System.out.println("Enter the accno number");
+					accno = sc.nextInt();
+					System.out.println("Enter the amount");
+					amount = sc.nextFloat();
+					result = asi.deposit(accno, amount);
+					System.out.println(result);
+					break;
+					
 			default :System.out.println("Wrong choice");
 				break;
 			}

@@ -9,4 +9,8 @@ public interface AccountService {
 	public void displayAllAccountDetails();
 	
 	public String findAccountBalance(int accno);
+	
+	public String withdraw(int accno, float amount);
+	
+	public String deposit(int accno, float amount);
 }
