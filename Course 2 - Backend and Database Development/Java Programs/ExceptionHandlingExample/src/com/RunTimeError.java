@@ -10,7 +10,7 @@ public class RunTimeError {
 		try {
 		int result = a/b;
 		System.out.println("Result is "+result);
-		int result1 = num[3];
+		int result1 = num[6];
 		System.out.println("Result is "+result1);
 		}catch(Exception e) {
 			//System.out.println("I Take Care!");
