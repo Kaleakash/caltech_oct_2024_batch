@@ -8,7 +8,7 @@ public class Operation {
 		System.out.println("divide method coding...");
 		return result;
 		//}catch(Exception e) {
-		//	System.out.println(e);
+		//	System.out.println("In Divide "+e);
 		//	return 0;
 		//}
 	}
