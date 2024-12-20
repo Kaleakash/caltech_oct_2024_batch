@@ -7,10 +7,10 @@ public class Car implements Runnable{
 		Thread t = Thread.currentThread();
 		String name = t.getName();
 		System.out.println(name);
-		for(int i=0;i<10;i++) {
+		for(int i=0;i<5;i++) {
 			System.out.println(name+" "+i);
 			try {
-				Thread.sleep(500);
+				Thread.sleep(2000);
 			} catch (Exception e) {
 				// TODO: handle exception
 			}

@@ -29,13 +29,17 @@ public class GameApp {
 	b2.setName("Pulsar");
 	b3.setName("TVS");
 	b4.setName("Activa");
-	b1.start();
-	b2.start();
-	b3.start();
-	b4.start();
+	//b1.start();
+	//b2.start();
+	//b3.start();
+	//b4.start();
 	c1.start();
 	c2.start();
 	c3.start();
+	
+	c2.join();// parent thread join with c1 thread when c1 thread work finish then remaining code execute. 
+	//b1.join();
+	System.out.println("Game End....");
 	}
 
 }
