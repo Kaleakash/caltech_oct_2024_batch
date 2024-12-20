@@ -11,7 +11,7 @@ Given('I navigate to the login page',async function () {
 When('I enter valid username and password', async function () {
     const email1 = await driver.findElement(By.id("email"));
     const password1 = await driver.findElement(By.id("password"));
-    await email1.sendKeys("akash@gmail.com");
+    await email1.sendKeys("akash@gmail.com");   // using cucumber we are going to write information in text filed 
     await password1.sendKeys("akash123");
 });
 When('I click on the login button for success',  async function () {
