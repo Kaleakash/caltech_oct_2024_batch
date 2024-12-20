@@ -7,7 +7,7 @@ public class DemoTest {
 		A obj1  = new A();	// obj1 is a thread class reference or object. 
 		B obj2 = new B();
 		
-		obj1.start();		// ready to run 
+		obj1.start();		// ready to run 	start method call run method. 
 		
 		obj2.start();		// ready to run 
 	}

@@ -2,6 +2,7 @@ package threadinfo;
 
 public class A extends Thread{
 
+
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
@@ -10,5 +11,4 @@ public class A extends Thread{
 			System.out.println("i "+i);
 		}
 	}
-
 }
