@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Map;
@@ -13,21 +14,22 @@ public class RetrieveElementsFromCollectionClasses {
 
 	public static void main(String[] args) {
 		// Set Family 
-//		Set hs = new HashSet();
-//		hs.add(10);
-//		hs.add("Ravi");
-//		hs.add(true);
-//		System.out.println(hs);
-//		System.out.println("retrieve element one by one using for each loop");
-//		for(Object obj:hs) {
-//			System.out.println(obj);
-//		}
-//		System.out.println("retrieve the element one by one using iterator");
-//		Iterator li = hs.iterator();
-//		while(li.hasNext()) {
-//			Object obj = li.next();
-//			System.out.println(obj);
-//		}
+		//Set hs = new HashSet();
+		Set hs = new LinkedHashSet();
+		hs.add(10);
+		hs.add("Ravi");
+		hs.add(true);
+		System.out.println(hs);
+		System.out.println("retrieve element one by one using for each loop");
+		for(Object obj:hs) {
+			System.out.println(obj);
+		}
+		System.out.println("retrieve the element one by one using iterator");
+		Iterator li = hs.iterator();
+		while(li.hasNext()) {
+			Object obj = li.next();
+			System.out.println(obj);
+		}
 		
 		// List Family 
 //		List ll = new ArrayList();
@@ -53,17 +55,17 @@ public class RetrieveElementsFromCollectionClasses {
 //		}
 		
 		// Map family 
-		Map mm = new HashMap();
-		mm.put(1, "Steven");
-		mm.put(3, "Lex");
-		mm.put(2, "John");
-		System.out.println(mm);
-		Set ss = mm.keySet();	// it retrieve all keys from map and store in set. 
-		Iterator li = ss.iterator();
-		while(li.hasNext()) {
-			Object key = li.next();
-			System.out.println("Key "+key+"  Value "+mm.get(key));
-		}
+//		Map mm = new HashMap();
+//		mm.put(1, "Steven");
+//		mm.put(3, "Lex");
+//		mm.put(2, "John");
+//		System.out.println(mm);
+//		Set ss = mm.keySet();	// it retrieve all keys from map and store in set. 
+//		Iterator li = ss.iterator();
+//		while(li.hasNext()) {
+//			Object key = li.next();
+//			System.out.println("Key "+key+"  Value "+mm.get(key));
+//		}
 	}
 
 }
