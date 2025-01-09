@@ -18,7 +18,7 @@ public class App {
 		AccountService as = new AccountServiceImp();
 		String result;
 		do {
-			System.out.println("1:Create Account 2 : Display all account details");
+			System.out.println("1:Create Account 2 : Display all account details 3: Check balance 4 : Withdrawn 5 :Deposit");
 			System.out.println("Plz enter your choice");
 			choice = sc.nextInt();
 			switch (choice) {
@@ -37,6 +37,26 @@ public class App {
 				break;
 			case 2 : as.displayAllAccountDetails();
 				break;
+				
+			case 3 :System.out.println("Enter the account number");
+					accno = sc.nextInt();
+					result = as.findAccountBalance(accno);
+					System.out.println(result);
+					break;
+			case 4 :System.out.println("Enter the account number");
+					accno = sc.nextInt();
+					System.out.println("Enter the amount");
+					amount = sc.nextFloat();
+					result = as.withdraw(accno, amount);
+					System.out.println(result);
+					break;
+			case 5:	System.out.println("Enter the account number");
+					accno = sc.nextInt();
+					System.out.println("Enter the amount");
+					amount = sc.nextFloat();
+					result = as.deposit(accno, amount);
+					System.out.println(result);
+					break;
 			default:System.out.println("Wrong choice");
 				break;
 			}

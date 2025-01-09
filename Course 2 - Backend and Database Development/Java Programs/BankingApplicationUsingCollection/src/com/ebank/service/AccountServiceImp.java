@@ -53,19 +53,62 @@ public class AccountServiceImp implements AccountService{
 	@Override
 	public String findAccountBalance(int accno) {
 		// TODO Auto-generated method stub
-		return null;
+		String result = "Account doesn't exists";
+		Iterator<Account> li = listOfAccounts.iterator();
+		while(li.hasNext()) {
+			Account acc = li.next();
+			if(acc.getAccno()==accno) {
+				result = "Your account balanace is "+acc.getAmount();
+				break;
+			}
+		}		
+		return result;
 	}
 
 	@Override
 	public String withdraw(int accno, float amount) {
 		// TODO Auto-generated method stub
-		return null;
+		int flag=0;
+		Iterator<Account> li = listOfAccounts.iterator();
+		while(li.hasNext()) {
+			Account acc = li.next();
+			if(acc.getAccno()==accno) {
+				float balance = acc.getAmount();
+				float updatedBalance = balance-amount;
+				acc.setAmount(updatedBalance);
+				flag++;
+				break;
+			}
+		}
+		if(flag==0) {
+			return "Amount didn't withdrawn";
+		}else {
+			flag=0;
+			return "Amount withdrawn successfully";
+		}
 	}
 
 	@Override
 	public String deposit(int accno, float amount) {
 		// TODO Auto-generated method stub
-		return null;
+		int flag=0;
+		Iterator<Account> li = listOfAccounts.iterator();
+		while(li.hasNext()) {
+			Account acc = li.next();
+			if(acc.getAccno()==accno) {
+				float balance = acc.getAmount();
+				float updatedBalance = balance+amount;
+				acc.setAmount(updatedBalance);
+				flag++;
+				break;
+			}
+		}
+		if(flag==0) {
+			return "Amount didn't deposit";
+		}else {
+			flag=0;
+			return "Amount deposited successfully";
+		}
 	}
 
 }
