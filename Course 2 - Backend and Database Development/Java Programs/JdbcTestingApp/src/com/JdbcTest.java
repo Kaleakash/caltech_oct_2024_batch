@@ -11,7 +11,7 @@ public class JdbcTest {
 	Statement stmt = con.createStatement();
 		// Insert Query 
 		
-//		int result = stmt.executeUpdate("insert into employee values(2,'John',25000)");
+//		int result = stmt.executeUpdate("insert into employee values(4,'Neena',32000)");
 //		if(result>0) {
 //			System.out.println("Record inserted successfully");
 //		}
@@ -26,13 +26,19 @@ public class JdbcTest {
 //		}
 		
 		// Delete Query 
-		int result = stmt.executeUpdate("delete from employee where eid=2");
-		if(result>0) {
-			System.out.println("Record deleted successfully");
-		}else {
-			System.out.println("Record not present");
-		}
+//		int result = stmt.executeUpdate("delete from employee where eid=2");
+//		if(result>0) {
+//			System.out.println("Record deleted successfully");
+//		}else {
+//			System.out.println("Record not present");
+//		}
 		
+		// Retrieve query 
+		ResultSet rs = stmt.executeQuery("select * from employee");
+		while(rs.next()) {	// it scan that record 
+	//System.out.println(" Id is "+rs.getInt(1)+" Name is "+rs.getString(2)+" Salary is "+rs.getFloat(3));
+	System.out.println(" Id is "+rs.getInt("eid")+" Name is "+rs.getString("ename")+" Salary is "+rs.getFloat("salary"));
+		}
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}
