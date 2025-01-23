@@ -46,7 +46,7 @@ public class LoginServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		RequestDispatcher rd1 = request.getRequestDispatcher("Home");
 		RequestDispatcher rd2 = request.getRequestDispatcher("login.html");
-		
+		// load the driver, connect the db, preparedstatement and resulset
 		if(emailid.equals("akash@gmail.com") && password.equals("123")) {
 			pw.println("Successfully login! with Post method");
 			rd1.forward(request, response);		// target page output. 

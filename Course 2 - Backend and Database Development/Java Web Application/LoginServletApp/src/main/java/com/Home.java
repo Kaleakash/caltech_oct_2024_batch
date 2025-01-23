@@ -29,7 +29,7 @@ public class Home extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter pw = response.getWriter();
 		String emailid = request.getParameter("emailid");
-		pw.println("Welcome to Home Page with Post method "+emailid);
+		pw.println("Welcome to Home Page with Post method "+emailid	);
 	}
 
 }
