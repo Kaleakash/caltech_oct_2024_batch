@@ -8,5 +8,7 @@
 </head>
 <body>
 <h2>This is my simple web application</h2>
+<%!String name="Akash Kale"; %>
+<p>User <%=name %></p>
 </body>
 </html>
