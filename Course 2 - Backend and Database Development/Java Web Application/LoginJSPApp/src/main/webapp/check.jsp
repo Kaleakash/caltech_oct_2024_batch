@@ -1,5 +1,7 @@
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +15,8 @@ emailid = request.getParameter("emailid");
 password = request.getParameter("password");
 //RequestDispatcher rd1 = request.getRequestDispatcher("home.jsp");
 //RequestDispatcher rd2 = request.getRequestDispatcher("login.jsp");
-
+// we want to check emailid and password from database using JDBC. 
+Connection con = DriverManager.getConnection("", "", "");
 if(emailid.equals("akash@gmail.com") && password.equals("123")){
 	out.println("successfully login");
 	//rd1.forward(request, response);
