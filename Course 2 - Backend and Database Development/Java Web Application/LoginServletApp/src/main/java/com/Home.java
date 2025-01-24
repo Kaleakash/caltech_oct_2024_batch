@@ -20,9 +20,9 @@ public class Home extends HttpServlet {
     }
 
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		PrintWriter pw = response.getWriter();
-		String emailid = request.getParameter("emailid");
+	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		PrintWriter pw = res.getWriter();
+		String emailid = req.getParameter("emailid");
 		pw.println("Welcome to Home Page with Get method "+emailid);
 	}
 

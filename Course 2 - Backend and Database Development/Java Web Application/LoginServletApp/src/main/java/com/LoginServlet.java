@@ -21,10 +21,11 @@ public class LoginServlet extends HttpServlet {
        
     }
 
-
+    String user;	// instance variable 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter pw = response.getWriter();// it help to display the output on browser 
 		// request.getParameter("fieldName") which help to receive the value as string 
+		// local variable. 
 		String emailid = request.getParameter("emailid");
 		String password = request.getParameter("password");
 		RequestDispatcher rd1 = request.getRequestDispatcher("Home");
