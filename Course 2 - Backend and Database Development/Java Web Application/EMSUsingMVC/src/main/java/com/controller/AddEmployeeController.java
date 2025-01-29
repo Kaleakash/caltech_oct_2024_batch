@@ -15,6 +15,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.bean.Employee;
+import com.dao.EmployeeDao;
+import com.resource.DbResource;
+import com.service.EmployeeService;
+
 /**
  * Servlet implementation class AddEmployeeController
  */
@@ -37,35 +42,19 @@ public class AddEmployeeController extends HttpServlet {
 		float salary = Float.parseFloat(request.getParameter("salary"));
 		LocalDate doj = LocalDate.parse(request.getParameter("doj"));
 		
-		RequestDispatcher rd = request.getRequestDispatcher("addEmployee.jsp");
-		// we write business logic as well as database logic. 
+		Employee emp = new Employee();
+		emp.setId(id);
+		emp.setName(name);
+		emp.setSalary(salary);
+		emp.setDoj(doj);
 		
-		// business logic 
-		if(salary<10000) {
-			pw.println("Salary must be > 10000");
-			rd.include(request, response);
-		}else {
-			// JDBC code 
-			//pw.println("Ready to store the information in db");
-			try {
-	Class.forName("com.mysql.cj.jdbc.Driver");
-	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb_mvc", "root", "root@123");
-	PreparedStatement pstmt = con.prepareStatement("insert into employee values(?,?,?,?)");
-	pstmt.setInt(1, id);
-	pstmt.setString(2, name);
-	pstmt.setFloat(3, salary);
-	pstmt.setString(4, doj.toString());
-	int result = pstmt.executeUpdate();
-	if(result>0) {
-		pw.print("Employee stored successfully");
+		RequestDispatcher rd = request.getRequestDispatcher("addEmployee.jsp");
+		EmployeeService es = new EmployeeService();
+		
+		String result = es.storeEmployee(emp);
+		pw.print(result);
+		
 		rd.include(request, response);
-	}
-			} catch (Exception e) {
-				pw.print(e.toString());
-			    rd.include(request, response);
-			}
-			
-		}
 		response.setContentType("text/html");
 	}
 
