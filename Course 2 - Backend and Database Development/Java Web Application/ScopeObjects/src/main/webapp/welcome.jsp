@@ -8,12 +8,12 @@
 </head>
 <body>
 <%
-//Object id = request.getAttribute("eid");
-//Object name = request.getAttribute("ename");
-//Object salary = request.getAttribute("esalary");
-//int id = (int)request.getAttribute("eid");
-//String name = (String)request.getAttribute("ename");
-//float salary = (float)request.getAttribute("esalary");
+/*Object id = request.getAttribute("eid");
+Object name = request.getAttribute("ename");
+Object salary = request.getAttribute("esalary");
+int id = (int)request.getAttribute("eid");
+String name = (String)request.getAttribute("ename");
+float salary = (float)request.getAttribute("esalary");*/
 out.println("<br/> In JSP page");
 //out.println("<br/> id is "+id);
 //out.println("<br/> name is "+name);
