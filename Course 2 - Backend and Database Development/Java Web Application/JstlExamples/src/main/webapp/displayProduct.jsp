@@ -41,7 +41,7 @@ while(li.hasNext()){
 
 <hr/>
 
-<h2>List Of Product in table format using JSP</h2>
+<h2>List Of Product in table format using JSTL</h2>
 <table border="1">
 	<tr>
 		<th>PId</th>
