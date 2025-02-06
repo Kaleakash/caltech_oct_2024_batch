@@ -39,8 +39,16 @@ public class BatchController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		PrintWriter pw = response.getWriter();
+		int bid = Integer.parseInt(request.getParameter("bid"));
+		String typeofbatch = request.getParameter("typeofbatch");
+		String time = request.getParameter("time");
+		
+		Batch bb = new Batch();
+		bb.setBid(bid);
+		bb.setTypeofbatch(typeofbatch);
+		bb.setTime(time);
+		
 	}
 
 }
