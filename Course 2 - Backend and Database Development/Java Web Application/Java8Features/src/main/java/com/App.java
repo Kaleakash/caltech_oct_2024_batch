@@ -7,7 +7,9 @@ public class App {
 	hsbc.withdraw();
 	hsbc.deposit();
 	hsbc.findBalance(100);
-	Bank.roi();
+	Bank.roi();		//static method we are calling using interface name. 
+	//hsbc.roi();
+	
 	System.out.println("--------------------");
 	BankOfAmerica boa = new BankOfAmerica();
 	boa.deposit();
