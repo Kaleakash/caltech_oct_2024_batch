@@ -4,7 +4,7 @@ public class App {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// 1st approach without lamda expression 
+		// 1st approach without lambda expression 
 		Hello obj1 = new HelloImp();
 		obj1.sayHello();
 		
