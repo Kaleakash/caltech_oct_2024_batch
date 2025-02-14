@@ -1,0 +1,43 @@
+db.Trainer1.insert({
+_id:102,
+tname:"Leena",
+technology:["HTML","CSS","JS","Angular"],
+students: [
+      { sid: 1, sname: 'Seeta', age: 21 },
+      { sid: 2, sname: 'Meeta', age: 22 },
+     { sid: 3, sname: 'Veeta', age: 23 }
+    ]
+});
+
+separate collection for trainer 
+db.Trainer.insertMany(
+[
+{_id:100,tname:"John",technology:["Java","Python"]},
+{_id:101,tname:"Steven",technology:["Python"]},
+{_id:102,tname:"Leena",technology:["HTML","CSS","JS","Angular"]}
+]);
+separate collection for student 
+db.Student.insertMany([
+{_id:1,sname:"Meena",age:21,tid:db.Trainer.findOne({_id:100})._id},
+{_id:2,sname:"Veena",age:22,tid:db.Trainer.findOne({_id:100})._id},
+{_id:3,sname:"Keena",age:23,tid:db.Trainer.findOne({_id:101})._id},
+{_id:4,sname:"Ueena",age:25,tid:[db.Trainer.findOne({_id:100})._id,db.Trainer.findOne({_id:102})._id]}
+]);
+
+db.Student.aggregate([{
+$lookup:{
+	from :"Trainer",
+	localField:"tid",
+	foreignField:"_id",
+	as:"TrainerInfo"
+}
+}]);
+
+db.Trainer.aggregate([{
+$lookup:{
+	from :"Student",
+	localField:"_id",
+	foreignField:"tid",
+	as:"StudentInfo"
+}
+}]);
