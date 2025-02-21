@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -48,7 +49,11 @@ public class BatchController extends HttpServlet {
 		bb.setBid(bid);
 		bb.setTypeofbatch(typeofbatch);
 		bb.setTime(time);
-		
+		String result = bs.storeBatch(bb);
+		pw.println(result);
+		RequestDispatcher rd = request.getRequestDispatcher("addBatch.jsp");
+		rd.include(request, response);
+		response.setContentType("text/html");
 	}
 
 }

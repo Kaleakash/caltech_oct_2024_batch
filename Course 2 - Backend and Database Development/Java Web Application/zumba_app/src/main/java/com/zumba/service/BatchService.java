@@ -13,4 +13,12 @@ public class BatchService {
 	public List<Batch> viewAllBatchDetails() {
 		return bd.viewAllBatch();	// after retrieve if need any business logic we can apply and return 
 	}
+	
+	public String storeBatch(Batch batch) {
+		if(bd.storeBatchinfo(batch)>0) {
+			return "Batch details stored successfully";
+		}else {
+			return "Batch details didn't store";
+		}
+	}
 }

@@ -5,11 +5,15 @@ import java.sql.DriverManager;
 
 public class DatabaseResource {
 
+	static String url="jdbc:mysql://localhost:3306/my_zumbma_db";
+	static String username="root";
+	static String password="root@123";
+	
 	private static Connection con;
 	static {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			 con= DriverManager.getConnection("jdbc:mysql://localhost:3306/my_zumbma_db", "root", "root@123");
+			 con= DriverManager.getConnection(url,username,password);
 		}catch(Exception e) {
 			System.err.println(e);
 		}

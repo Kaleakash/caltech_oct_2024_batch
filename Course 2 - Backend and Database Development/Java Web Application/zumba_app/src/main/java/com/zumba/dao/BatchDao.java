@@ -32,4 +32,20 @@ public class BatchDao {
 		}
 		return listOfBatch;
 	}
+	
+	public int storeBatchinfo(Batch batch) {
+		
+		try {
+		Connection con = DatabaseResource.getDbConnection();
+		PreparedStatement pstmt = con.prepareStatement("insert into batch values(?,?,?)");	// as string format 
+		pstmt.setInt(1, batch.getBid());
+		pstmt.setString(2, batch.getTypeofbatch());
+		pstmt.setString(3, batch.getTime());
+		return pstmt.executeUpdate();
+		} catch (Exception e) {
+			System.err.println(e.toString());
+			return 0;
+		}
+		
+	}
 }

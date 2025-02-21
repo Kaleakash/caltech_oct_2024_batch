@@ -8,7 +8,7 @@
 </head>
 <body>
 <h2>Add Batch Details</h2>
-<form action="" method="post">
+<form action="BatchController" method="post">
 	<label>BatchId</label>
 	<input type="number" name="bid"/><br/>
 	<label>TypeOfBatch</label>
