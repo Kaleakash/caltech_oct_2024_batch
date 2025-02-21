@@ -15,11 +15,15 @@ public class DemoTest {
 		//emp1.displayEmployee();
 		
 		// load the xml file 
-		Resource res = new ClassPathResource("beans.xml");
+		Resource res = new ClassPathResource("beans.xml");	
 		// BeanFactory object created 
 		BeanFactory fatory = new XmlBeanFactory(res);
+		
 		Employee employee1 = (Employee)fatory.getBean("emp1");
 		employee1.displayEmployee();
+		
+		Employee employee2 = (Employee)fatory.getBean("emp1");
+		employee2.displayEmployee();
 	}
 
 }
