@@ -1,10 +1,10 @@
 package com;
 
 public class Employee {
-private int id;
-private String name;
-private float salary;
-	
+private int id;			// single value 
+private String name;		// single value 
+private float salary;		// single value 
+private Address add;			// Employee has a address ie only one address it can hold many values of other types
 	// empty constructor 
 	public Employee() {
 		System.out.println("object created using empty constructor...");
@@ -19,6 +19,19 @@ private float salary;
 		this.salary = salary;
 	}
 
+
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + ", add=" + add + "]";
+	}
+
+	public Address getAdd() {
+		return add;
+	}
+
+	public void setAdd(Address add) {
+		this.add = add;
+	}
 
 	public int getId() {
 		return id;
