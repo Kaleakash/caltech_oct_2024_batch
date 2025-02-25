@@ -24,21 +24,30 @@
 
 
 
-<bean class="com.Address" id="add1">
+<bean class="com.Address" id="add">
 	<property name="state" value="Texas"></property>
 	<property name="city" value="Austin"></property>
 </bean>
 
-<bean class="com.Address" id="add2">
+<bean class="com.Address" id="add123">
 	<property name="state" value="California"></property>
 	<property name="city" value="San Diego"></property>
 </bean>
-
 <bean class="com.Employee" id="emp5">
 	<property name="id" value="102"></property>
 	<property name="name" value="John"></property>
 	<property name="salary" value="55000"></property>
 	<property name="add" ref="add1"></property>
+</bean>
+<bean class="com.Employee" id="emp6" autowire="byType">
+	<property name="id" value="103"></property>
+	<property name="name" value="Lex"></property>
+	<property name="salary" value="58000"></property>
+</bean>
+<bean class="com.Employee" id="emp7" autowire="byName">
+	<property name="id" value="105"></property>
+	<property name="name" value="Raj"></property>
+	<property name="salary" value="62000"></property>
 </bean>
 
 </beans>
