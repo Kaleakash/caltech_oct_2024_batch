@@ -1,12 +1,15 @@
 package com;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component							// <bean class="com.Address"></bean> here id name is address.
 @Scope("prototype")
 public class Address {
+@Value(value = "unknown")
 private String city;
+@Value(value = "unknown")
 private String state;
 public String getCity() {
 	return city;
