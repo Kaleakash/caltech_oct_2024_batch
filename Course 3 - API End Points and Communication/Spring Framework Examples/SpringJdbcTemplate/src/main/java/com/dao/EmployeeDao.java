@@ -4,6 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +44,15 @@ return jdbcTemplate.update("update employee set salary=?,name=? where id=?", emp
 		}
 	}
 	
+	public List<Map<String,Object>> retrieveEmployeeAsMap() {
+		try {
+	// converted each record as map object. 
+return jdbcTemplate.queryForList("select * from employee");
+		} catch (Exception e) {
+			System.err.println(e.toString());
+			return null;
+		}
+	}
 	
 }
 
