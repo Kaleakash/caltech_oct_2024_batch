@@ -1,5 +1,6 @@
 package com.service;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -41,6 +42,20 @@ EmployeeDao employeeDao;
 	}
 	public List<Map<String, Object>> getEmployeeAsMap() {
 		return employeeDao.retrieveEmployeeAsMap();
+	}
+	
+	public List<Employee> getAllEmployeeAsListOfEmployee() {
+		List<Employee> listOfEmployees = employeeDao.getAllEmployeeAsListOfEmployee();
+		Iterator<Employee> li = listOfEmployees.iterator();
+		while(li.hasNext()) {
+			Employee emp = li.next();
+			if(emp.getSalary()>20000) {
+				emp.setSalary(emp.getSalary()+2000);
+			}else {
+				emp.setSalary(emp.getSalary()+4000);
+			}
+		}
+		return listOfEmployees;
 	}
 }
 

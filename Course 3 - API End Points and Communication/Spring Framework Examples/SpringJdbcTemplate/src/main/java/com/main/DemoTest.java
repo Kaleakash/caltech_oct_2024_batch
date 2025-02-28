@@ -26,7 +26,7 @@ public class DemoTest {
 		String result;
 		do {
 			System.out.println("1:Add Employee 2 :Delete Employee 3 :Update Employee"
-					+ "4: Retrieve Employee details as Map");
+					+ "4: Retrieve Employee details as Map 5: Retrieve Employee records as List");
 			System.out.println("Enter your choice");
 			choice = sc.nextInt();
 			switch (choice) {
@@ -71,6 +71,14 @@ public class DemoTest {
 			   System.out.println(mm.get("id")+" "+mm.get("name")+" "+mm.get("salary"));
 			    }
 			    break;
+			case 5:System.out.println("All Employee details as List of employee");
+		    List<Employee> listOfEmployee= es.getAllEmployeeAsListOfEmployee();
+		    Iterator<Employee> li1 = listOfEmployee.iterator();
+		    while(li1.hasNext()) {
+		    	Employee emp = li1.next();
+		    	System.out.println(emp.toString());
+		    }
+		    break;
 			default:System.out.println("Wrong choice");
 				break;
 			}
