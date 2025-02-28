@@ -26,6 +26,7 @@ public class DemoTest {
 		System.out.println("Enter the salary");
 		float salary = sc.nextFloat();
 		employee1.setSalary(salary);
+		
 		EmployeeService es = (EmployeeService)ac.getBean("employeeService");
 		String result = es.storeEmployee(employee1);
 		System.out.println(result);
