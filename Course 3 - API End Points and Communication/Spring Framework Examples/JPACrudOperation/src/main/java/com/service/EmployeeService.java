@@ -13,4 +13,23 @@ public class EmployeeService {
 			return "Employee record didn't store";
 		}
 	}
+	
+	public String updateEmployee(Employee employee) {
+		if(ed.updateSalary(employee)>0) {
+			return "Employee record updated";
+		}else {
+			return "Employee record not present";
+		}
+	}
+	
+	public String deleteEmployee(int id) {
+		if(ed.deleteEmployee(id)>0) {
+			return "Employee record deleted";
+		}else {
+			return "Employee record not present";
+		}
+	}
+	public Employee findEmployee(int id) {
+		return ed.findEmployee(id);
+	}
 }

@@ -35,5 +35,46 @@ public class EmployeeDao {
 		}
 		
 	}
+	
 
+	public int deleteEmployee(int id) {
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("JpaDemo");	 // like a Connection 
+		EntityManager manager = emf.createEntityManager();		// like a PreparedStatement 
+		EntityTransaction tran = manager.getTransaction();
+		Employee emp = manager.find(Employee.class, id);
+		if(emp==null) {
+			return 0;
+		}else {
+			tran.begin();
+			manager.remove(emp);		// delete query
+			tran.commit();
+			return 1;
+		}
+		
+	}
+	
+	public int updateSalary(Employee emp) {	// id and salary
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("JpaDemo");	 // like a Connection 
+		EntityManager manager = emf.createEntityManager();		// like a PreparedStatement 
+		EntityTransaction tran = manager.getTransaction();
+		Employee employee = manager.find(Employee.class, emp.getId());
+		if(employee==null) {
+			return 0;
+		}else {
+			tran.begin();
+				employee.setSalary(emp.getSalary());  // replace new salary
+				manager.merge(employee);				// update new salary in existing objects. 
+			tran.commit();
+			return 1;
+		}
+		
+	}
+	
+	public Employee findEmployee(int id) {	// id and salary
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("JpaDemo");	 // like a Connection 
+		EntityManager manager = emf.createEntityManager();		// like a PreparedStatement 
+		Employee employee = manager.find(Employee.class, id);
+		return employee;
+		
+	}
 }

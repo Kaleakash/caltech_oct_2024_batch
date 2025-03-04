@@ -4,6 +4,7 @@
 	
 	
 	<persistence-unit name="JpaDemo" transaction-type="RESOURCE_LOCAL">
+	<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<class>com.bean.Employee</class>
 		
 		<properties>
