@@ -24,12 +24,20 @@ public class DemoTest {
 //	String result = es.deleteEmployee(101);
 //	System.out.println(result);
 	
-	// Update Employee 
-	Employee employee1 = (Employee)ac.getBean("employee");
-	employee1.setId(102);
-	employee1.setSalary(25000);
-	String result = es.updateEmployeeSalary(employee1);
-	System.out.println(result);
+//	// Update Employee 
+//	Employee employee1 = (Employee)ac.getBean("employee");
+//	employee1.setId(102);
+//	employee1.setSalary(25000);
+//	String result = es.updateEmployeeSalary(employee1);
+//	System.out.println(result);
+	
+	// Find Employee details using id 
+	Employee emp = es.findEmployee(100);
+	if(emp==null) {
+		System.out.println("Record not present");
+	}else {
+		System.out.println(emp.toString());
+	}
 	}
 
 }

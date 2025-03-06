@@ -59,4 +59,11 @@ public class EmployeeDao {
 			return 1;
 		}
 	}
+	
+	// find Employee using id 
+	public Employee findEmployee(int id) {
+		EntityManager manager = emf.createEntityManager();
+		Employee emp = manager.find(Employee.class, id);
+		return emp;
+	}
 }

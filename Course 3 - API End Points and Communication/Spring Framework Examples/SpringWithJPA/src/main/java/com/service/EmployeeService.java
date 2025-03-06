@@ -34,4 +34,8 @@ public class EmployeeService {
 			return "Employee record not present";
 		}
 	}
+	
+	public Employee findEmployee(int id) {
+		return employeeDao.findEmployee(id);
+	}
 }
