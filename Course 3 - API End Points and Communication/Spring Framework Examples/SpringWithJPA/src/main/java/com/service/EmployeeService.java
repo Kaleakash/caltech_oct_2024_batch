@@ -44,4 +44,8 @@ public class EmployeeService {
 	public List<Employee> findAllEmployees() {
 		return employeeDao.findAllEmployees();
 	}
+	
+	public List<Employee> findEmployeeWithSalaryCondition(float salary){
+		return employeeDao.findEmployeeWithSalaryCondition(salary);
+	}
 }

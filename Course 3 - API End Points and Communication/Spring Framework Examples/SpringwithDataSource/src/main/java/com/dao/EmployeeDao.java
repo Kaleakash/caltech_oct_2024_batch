@@ -73,6 +73,7 @@ public class EmployeeDao {
 				emp.setId(rs.getInt(1));
 				emp.setName(rs.getString(2));
 				emp.setSalary(rs.getFloat(3));
+				
 				listofEmp.add(emp);
 			}
 		} catch (Exception e) {

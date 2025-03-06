@@ -77,6 +77,17 @@ public class EmployeeDao {
 		List<Employee> listOfEmp= qry.getResultList();
 		return listOfEmp;
 	}
+	
+	// find record with conditions. 
+	public List<Employee> findEmployeeWithSalaryCondition(float salary){
+		EntityManager manager = emf.createEntityManager();
+		// label query which is use to set the dynamic value 
+		Query qry = manager.createQuery("select e from Employee e where e.salary > :esalary");
+		// esalary is label name
+		qry.setParameter("esalary", salary);
+		List<Employee> listOfEmp= qry.getResultList();
+		return listOfEmp;
+	}
 }
 
 

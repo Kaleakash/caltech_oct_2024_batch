@@ -42,7 +42,13 @@ public class DemoTest {
 //	}
 	
 	// retrieve All Employee using JPQL 
-	List<Employee> listOfEmployee = es.findAllEmployees();
+//	List<Employee> listOfEmployee = es.findAllEmployees();
+//	for(Employee emp:listOfEmployee) {
+//		System.out.println(emp);
+//	}
+	
+	// find Employee with salary conditions 
+	List<Employee> listOfEmployee = es.findEmployeeWithSalaryCondition(60000);
 	for(Employee emp:listOfEmployee) {
 		System.out.println(emp);
 	}
