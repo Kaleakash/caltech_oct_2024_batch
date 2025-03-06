@@ -2,6 +2,7 @@ package com.bean;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Component;
 @Entity
 @Component
 @Scope("prototype")
+@Table(name="employee")
 public class Employee {
 @Id
 private int id;
