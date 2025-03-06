@@ -1,8 +1,11 @@
 package com.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
+import javax.persistence.Query;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -66,4 +69,17 @@ public class EmployeeDao {
 		Employee emp = manager.find(Employee.class, id);
 		return emp;
 	}
+	
+	// find All record using JPQL language 
+	public List<Employee> findAllEmployees() {
+		EntityManager manager = emf.createEntityManager();
+		Query qry = manager.createQuery("select e from Employee e");
+		List<Employee> listOfEmp= qry.getResultList();
+		return listOfEmp;
+	}
 }
+
+
+
+
+

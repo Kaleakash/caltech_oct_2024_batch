@@ -1,5 +1,7 @@
 package com.main;
 
+import java.util.List;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -32,12 +34,19 @@ public class DemoTest {
 //	System.out.println(result);
 	
 	// Find Employee details using id 
-	Employee emp = es.findEmployee(100);
-	if(emp==null) {
-		System.out.println("Record not present");
-	}else {
-		System.out.println(emp.toString());
+//	Employee emp = es.findEmployee(100);
+//	if(emp==null) {
+//		System.out.println("Record not present");
+//	}else {
+//		System.out.println(emp.toString());
+//	}
+	
+	// retrieve All Employee using JPQL 
+	List<Employee> listOfEmployee = es.findAllEmployees();
+	for(Employee emp:listOfEmployee) {
+		System.out.println(emp);
 	}
+	
 	}
 
 }

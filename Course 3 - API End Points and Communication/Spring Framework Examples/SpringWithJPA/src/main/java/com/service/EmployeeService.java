@@ -1,5 +1,7 @@
 package com.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,5 +39,9 @@ public class EmployeeService {
 	
 	public Employee findEmployee(int id) {
 		return employeeDao.findEmployee(id);
+	}
+	
+	public List<Employee> findAllEmployees() {
+		return employeeDao.findAllEmployees();
 	}
 }
