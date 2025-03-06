@@ -49,10 +49,8 @@ public class EmployeeDao {
 			manager.remove(emp);		// delete query
 			tran.commit();
 			return 1;
-		}
-		
+		}	
 	}
-	
 	public int updateSalary(Employee emp) {	// id and salary
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("JpaDemo");	 // like a Connection 
 		EntityManager manager = emf.createEntityManager();		// like a PreparedStatement 
@@ -66,10 +64,8 @@ public class EmployeeDao {
 				manager.merge(employee);				// update new salary in existing objects. 
 			tran.commit();
 			return 1;
-		}
-		
+		}	
 	}
-	
 	public Employee findEmployee(int id) {	// id and salary
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("JpaDemo");	 // like a Connection 
 		EntityManager manager = emf.createEntityManager();		// like a PreparedStatement 
