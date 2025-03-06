@@ -20,6 +20,7 @@ public class EmployeeDao {
 
 	@Autowired
 	JdbcTemplate jdbcTemplate;	
+	
 	public int storeEmployee(Employee employee) {
 	try {
 		return jdbcTemplate.update("insert into employee values(?,?,?)", employee.getId(),employee.getName(),employee.getSalary());
