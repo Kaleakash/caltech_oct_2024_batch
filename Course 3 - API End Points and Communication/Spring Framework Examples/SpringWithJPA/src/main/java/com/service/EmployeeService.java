@@ -19,4 +19,19 @@ public class EmployeeService {
 			return "Employee record didn't store";
 		}
 	}
+	
+	public String deleteEmployee(int id) {
+		if(employeeDao.deleteEmployee(id)>0) {
+			return "Employee record deleted successfully";
+		}else {
+			return "Employee record not present";
+		}
+	}
+	public String updateEmployeeSalary(Employee emp) {
+		if(employeeDao.updateEmployeeSalary(emp)>0) {
+			return "Employee record updated";
+		}else {
+			return "Employee record not present";
+		}
+	}
 }
