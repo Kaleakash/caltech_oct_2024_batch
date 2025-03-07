@@ -88,6 +88,32 @@ public class EmployeeDao {
 		List<Employee> listOfEmp= qry.getResultList();
 		return listOfEmp;
 	}
+	
+		// retrieve only name of all employees using JPQL 
+		public List<String> findAllEmployeeNames(){
+			EntityManager manager = emf.createEntityManager();
+			// retrieve partial object ie only one property 
+			Query qry = manager.createQuery("select e.name from Employee e");
+			List<String> names= qry.getResultList();
+			return names;
+		}
+		
+		// retrieve only salary of all employees using JPQL 
+		public List<Float> findAllEmployeeSalary(){
+			EntityManager manager = emf.createEntityManager();
+			// retrieve partial object ie only one property 
+			Query qry = manager.createQuery("select e.salary from Employee e");
+			List<Float> salary= qry.getResultList();
+			return salary;
+		}
+		// retrieve only salary of all employees using JPQL 
+		public List<Object[]> findAllEmployeeNameAndSalary(){
+			EntityManager manager = emf.createEntityManager();
+			// retrieve more than one we need to do type casting object array
+			Query qry = manager.createQuery("select e.name,e.salary from Employee e");
+			List<Object[]> nameAndSalary= qry.getResultList();
+			return nameAndSalary;
+		}
 }
 
 

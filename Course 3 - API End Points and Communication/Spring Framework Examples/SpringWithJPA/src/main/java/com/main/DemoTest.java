@@ -48,9 +48,26 @@ public class DemoTest {
 //	}
 	
 	// find Employee with salary conditions 
-	List<Employee> listOfEmployee = es.findEmployeeWithSalaryCondition(60000);
-	for(Employee emp:listOfEmployee) {
-		System.out.println(emp);
+//	List<Employee> listOfEmployee = es.findEmployeeWithSalaryCondition(60000);
+//	for(Employee emp:listOfEmployee) {
+//		System.out.println(emp);
+//	}
+	
+	// find All Employee names 
+//	List<String> names = es.findAllEmployeeNames();
+//	for(String name:names) {
+//		System.out.println(name);
+//	}
+	
+	// find all Employee salary 
+//	List<Float> salaries = es.findAllEmployeeSalary();
+//	for(float salary : salaries) {
+//		System.out.println(salary);
+//	}
+	// find All employee name and salary 
+	List<Object[]> namesAndSalary = es.findNameAndSalary();
+	for(Object obj[]:namesAndSalary) {
+		System.out.println("name "+obj[0]+ " salary "+obj[1]);
 	}
 	
 	}
