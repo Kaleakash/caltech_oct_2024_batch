@@ -43,12 +43,17 @@ public class RelationshipClassDemo {
 //	}
 	
 		// find all trainer 
-	List<Trainer> lisOfTrainer = ts.findAllTrainer();
-	for(Trainer t:lisOfTrainer) {
-		//System.out.println(t);   // it call toString method display all information 
-		System.out.println("Trainer name is "+t.getTname()+" Handling "+t.getListOfStudent().size()+" of student ");
-	}
+//	List<Trainer> lisOfTrainer = ts.findAllTrainer();
+//	for(Trainer t:lisOfTrainer) {
+//		//System.out.println(t);   // it call toString method display all information 
+//		System.out.println("Trainer name is "+t.getTname()+" Handling "+t.getListOfStudent().size()+" of student ");
+//	}
 	
+	// retrieve trainer and student information using inner join with help of jpql query 
+	List<Object[]> trainerAndStudent = ts.findTrainerAndStudentUsingJoin();
+	for(Object obj[]:trainerAndStudent) {
+		System.out.println("Trainer name "+obj[0]+" Technology "+obj[1]+" Student name "+obj[2]);
+	}
 	}
 
 }

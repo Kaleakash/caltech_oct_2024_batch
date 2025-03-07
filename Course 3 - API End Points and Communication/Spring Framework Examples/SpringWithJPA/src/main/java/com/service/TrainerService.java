@@ -25,4 +25,8 @@ public class TrainerService {
 	public List<Trainer> findAllTrainer() {
 		return trainerDao.findAllTrainer();
 	}
+	
+	public List<Object[]> findTrainerAndStudentUsingJoin() {
+		return trainerDao.findTrainerAndStudentJoin();
+	}
 }
