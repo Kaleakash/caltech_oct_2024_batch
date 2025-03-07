@@ -1,8 +1,11 @@
 package com.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
+import javax.persistence.Query;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -27,5 +30,12 @@ public class StudentDao {
 			System.err.println(e);
 			return 0;
 		}
+	}
+	
+	public List<Student> findAllStudent() {
+		EntityManager manager = emf.createEntityManager();
+		Query qry = manager.createQuery("select ss from Student ss");
+		List<Student> listOfStudent = qry.getResultList();
+		return listOfStudent;
 	}
 }
