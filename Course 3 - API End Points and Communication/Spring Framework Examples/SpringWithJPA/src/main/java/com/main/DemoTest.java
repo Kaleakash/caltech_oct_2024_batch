@@ -64,6 +64,7 @@ public class DemoTest {
 //	for(float salary : salaries) {
 //		System.out.println(salary);
 //	}
+	
 	// find All employee name and salary 
 	List<Object[]> namesAndSalary = es.findNameAndSalary();
 	for(Object obj[]:namesAndSalary) {
