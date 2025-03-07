@@ -1,7 +1,9 @@
 package com.bean;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -9,9 +11,11 @@ import org.springframework.stereotype.Component;
 @Entity
 @Component
 @Scope("prototype")
+@Table(name="student")
 public class Student {
 @Id
 private int sid;
+@Column(name="sname")
 private String name;
 private int age;
 private Integer tid; // it can hold null value because it map to foreign key column 
