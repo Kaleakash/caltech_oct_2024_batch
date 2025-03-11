@@ -16,6 +16,7 @@ public class MyController {
 	@RequestMapping(value = "hello",method = RequestMethod.GET)
 	public ModelAndView sayHello() {		
 		// coding.... 
+		System.out.println("I Came Here!");
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("display1.jsp");
 		return mav;
