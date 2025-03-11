@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-@Controller			// controller specific annotation provide servlet features 
+@Controller			// controller specific annotation provide Servlet features 
 public class LoginController {
 
 	// like a doPost method 
