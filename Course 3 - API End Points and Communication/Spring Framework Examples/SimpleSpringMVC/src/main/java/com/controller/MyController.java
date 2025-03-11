@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class MyController {
 	
 		// the request end with hello path then this method get call
+	// http:afafadsfasfddfadffasdfs/hello
 	//@RequestMapping(value = "hello")		// by default get consider
 	@RequestMapping(value = "hello",method = RequestMethod.GET)
 	public ModelAndView sayHello() {		
