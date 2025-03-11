@@ -18,7 +18,16 @@ public class MyController {
 		// coding.... 
 		System.out.println("I Came Here!");
 		ModelAndView mav = new ModelAndView();
+		mav.addObject("msg", "Welcome to Spring mvc");
 		mav.setViewName("display1.jsp");
+		return mav;
+	}
+	@RequestMapping(value = "hi",method = RequestMethod.GET)
+	public ModelAndView sayHi() {		
+		// coding.... 
+		System.out.println("I Came Here!");
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("display2.jsp");
 		return mav;
 	}
 }
