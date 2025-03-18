@@ -42,10 +42,10 @@ public class ProductService {
 			Optional<Product> result = productDao.findById(product.getPid());
 			
 			if(result.isPresent()) {
-					Product p = result.get();	// retrieve that product object from db. 
-					p.setPname(product.getPname());
-					p.setPrice(product.getPrice());  // replace new data. 
-					productDao.saveAndFlush(p);		// update existing record with new information 
+					Product p1 = result.get();	// retrieve that product object from db. 
+					p1.setPname(product.getPname());
+					p1.setPrice(product.getPrice());  // replace new data. 
+					productDao.saveAndFlush(p1);		// update existing record with new information 
 					return "Product updated successfully";
 			}else {
 				return "product not present";
