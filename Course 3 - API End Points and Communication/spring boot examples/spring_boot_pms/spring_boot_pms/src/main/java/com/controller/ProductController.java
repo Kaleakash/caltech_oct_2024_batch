@@ -27,17 +27,24 @@ public class ProductController {
 		mm.addAttribute("project", "Product Management System");
 		List<Product> listOfProducts = productService.findAllProducts();
 		mm.addAttribute("products", listOfProducts);    // we store list of product in model scope with key as products 
+		mm.addAttribute("buttonKey", "Store Product");
 		return "index";
 	}
 	
 	@RequestMapping(value = "/storeProduct",method = RequestMethod.POST)
-	public String storeProduct(Model mm, Product product) {
+	public String storeProductOrUpdateProduct(Model mm, Product product,@RequestParam("submitButton") String submitButton) {
 		// if we use normal form with HttpServletRequest concept. 
 		// we need to receive value using request.getParameter 
 		// we need to do type casting with respective data type of variable. 
 		// we need to convert those value to java bean object and pass to service layer 
-		String result = productService.storeProduct(product);
-//		
+		String result = "";
+		if(submitButton.equals("Store Product")) {
+		result = productService.storeProduct(product);
+		}else {
+			System.out.println(product);
+		result = productService.updateProduct(product);
+		mm.addAttribute("buttonKey", "Store Product");
+		}
 		//System.out.println(product.toString());  // we check pname and price set or not
 		mm.addAttribute("name", "Akash Kale"); // like a request.setAttribute("name","akash kale");
 		mm.addAttribute("pp", product);  // we store product object in model scope
@@ -55,9 +62,7 @@ public class ProductController {
 	
 	@RequestMapping(value = "/deleteProduct",method = RequestMethod.GET)
 	public String deleteProduct(Model mm, Product product, @RequestParam("pid") int pid) {
-		
 		//System.out.println("Product id is "+pid);
-		//System.out.println(product.toString());  // we check pname and price set or not
 		String result = productService.deleteProduct(pid);
 		mm.addAttribute("name", "Akash Kale"); // like a request.setAttribute("name","akash kale");
 		mm.addAttribute("pp", product);  // we store product object in model scope
@@ -65,11 +70,29 @@ public class ProductController {
 		mm.addAttribute("msg", result);
 		List<Product> listOfProducts = productService.findAllProducts();
 		mm.addAttribute("products", listOfProducts);    // we store list of product in model scope with key as products 
+		mm.addAttribute("buttonKey", "Store Product");
 //		product.setPid(0);
 //		product.setPname("");
 //		product.setPrice(0.0f);		// reset value not to display once again on same form. 
 		return "index";
 	}
 	
+	
+	@RequestMapping(value = "/findProductToUpdate",method = RequestMethod.GET)
+	public String findProductUsingPid(Model mm, Product product, @RequestParam("pid") int pid) {
+		//System.out.println("Product id is "+pid);
+		Product updateProduct = productService.findProductByPid(pid);
+		mm.addAttribute("name", "Akash Kale"); // like a request.setAttribute("name","akash kale");
+		mm.addAttribute("pp", updateProduct);  // we store product object retrieve from DB. 
+		mm.addAttribute("project", "Product Management System");
+		//mm.addAttribute("msg", result);
+		List<Product> listOfProducts = productService.findAllProducts();
+		mm.addAttribute("products", listOfProducts);    // we store list of product in model scope with key as products 
+		mm.addAttribute("buttonKey", "Update Product");
+//		product.setPid(0);
+//		product.setPname("");
+//		product.setPrice(0.0f);		// reset value not to display once again on same form. 
+		return "index";
+	}
 }
 

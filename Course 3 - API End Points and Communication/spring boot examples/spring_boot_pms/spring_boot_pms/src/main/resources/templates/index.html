@@ -13,7 +13,7 @@
 	<input type="text" name="pname" th:field="*{pname}"/><br/>
 	<label>Price</label>
 	<input type="number" name="price" th:field="*{price}"/><br/>
-	<input type="submit" value="Store Product"/>
+	<input type="submit" th:value="${buttonKey}"  name="submitButton"/>
 	<input type="reset" value="reset"/>
 </form>
 <hr/>
@@ -23,12 +23,14 @@
 		<th>PName</th>
 		<th>Price</th>
 		<th>Delete</th>
+		<th>Update</th>
 	</tr>
 	<tr th:each="p:${products}">
 		<td th:text="${p.pid}"></td>
 		<td th:text="${p.pname}"></td>
 		<td th:text="${p.price}"></td>
 		<td><a th:href="@{deleteProduct(pid=${p.pid})}">Delete</a></td>
+		<td><a th:href="@{findProductToUpdate(pid=${p.pid})}">Update</a></td>
 	</tr>
 </table>
 </body>
