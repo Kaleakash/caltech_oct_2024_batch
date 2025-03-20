@@ -8,6 +8,7 @@ public class SpringbootbasicrestapiApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringbootbasicrestapiApplication.class, args);
+		System.out.println("spring boot rest api");
 	}
 
 }
