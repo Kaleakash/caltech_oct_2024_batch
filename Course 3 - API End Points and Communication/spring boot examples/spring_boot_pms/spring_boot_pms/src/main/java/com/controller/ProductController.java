@@ -40,10 +40,14 @@ public class ProductController {
 		String result = "";
 		if(submitButton.equals("Store Product")) {
 		result = productService.storeProduct(product);
+		mm.addAttribute("buttonKey", "Store Product");
 		}else {
-			System.out.println(product);
+		System.out.println(product);
 		result = productService.updateProduct(product);
 		mm.addAttribute("buttonKey", "Store Product");
+		product.setPid(0);
+		product.setPname("");
+		product.setPrice(0.0f);
 		}
 		//System.out.println(product.toString());  // we check pname and price set or not
 		mm.addAttribute("name", "Akash Kale"); // like a request.setAttribute("name","akash kale");

@@ -9,6 +9,7 @@
 <h2>Welcome to <b th:text="${project}"></b> app! created by:<span th:text="${name}"></span></h2>
 <br/>
 <form action="#" th:action="@{/storeProduct}" method="post" th:object="${pp}">
+	<input type="hidden" name="pid" th:field="*{pid}" th:value="*{pid}"/>
 	<label>PName</label>
 	<input type="text" name="pname" th:field="*{pname}"/><br/>
 	<label>Price</label>
