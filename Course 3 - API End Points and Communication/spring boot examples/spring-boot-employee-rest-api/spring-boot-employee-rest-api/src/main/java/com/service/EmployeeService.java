@@ -27,6 +27,30 @@ public class EmployeeService {
 			employeeRepository.save(employee);
 			return "Employee record stored successfully";
 		}	
-		
 	}
+	
+	public String updateEmployeeSalary(Employee employee) { // id and salary 
+		Optional<Employee> result	= employeeRepository.findById(employee.getId());
+		if(result.isPresent()) {
+			Employee emp = result.get();    // emp hold data from db. 
+			emp.setSalary(employee.getSalary());  // we replace old salary by new salary
+			employeeRepository.saveAndFlush(emp);
+			return "Employee salary updated successfully";
+		}else {
+
+			return "Employee not present";
+		}	
+	}
+	
+	public String deleteEmployee(int id) { // id and salary 
+		Optional<Employee> result	= employeeRepository.findById(id);
+		if(result.isPresent()) {
+			employeeRepository.deleteById(id);
+			return "Employee record deleted successfully";
+		}else {
+
+			return "Employee not present";
+		}	
+	}
+	
 }
