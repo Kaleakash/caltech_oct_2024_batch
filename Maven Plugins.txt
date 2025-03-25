@@ -6,22 +6,6 @@ Java version
     <maven.compiler.target>11</maven.compiler.target>
   </properties>
 
-
-
-Servlet Dependencies using Tomcat 10.0.1 version 
-
-<dependencies>
-  	<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
-<dependency>
-    <groupId>javax.servlet</groupId>
-    <artifactId>javax.servlet-api</artifactId>
-    <version>4.0.1</version>
-    <scope>provided</scope>
-</dependency>
-
-  </dependencies>
-
-
 H2 in memory database 
 
 <dependency>
@@ -107,6 +91,18 @@ JPA 2.0 or 2.1 Stable
 </dependency>
 
 <provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+persistence.xml file code 
+
+<persistence-unit name="JpaDemo" transaction-type="RESOURCE_LOCAL">
+		<class>com.Employee</class>
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/mydb"/>
+			<property name="javax.persistence.jdbc.user" value="root"/>
+			<property name="javax.persistence.jdbc.password" value="root@123"/>
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+		</properties>
+</persistence-unit>
 
 JSTL dependencies 
 
