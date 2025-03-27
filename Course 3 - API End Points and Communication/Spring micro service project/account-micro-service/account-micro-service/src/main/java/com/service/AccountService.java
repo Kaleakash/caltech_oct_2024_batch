@@ -23,4 +23,58 @@ public class AccountService {
 			return "Account created successfully";
 		}
 	}
+	
+	public String findBalance(int accno) {
+		Optional<Account> result = accountRepository.findById(accno);	// passing account number 
+		if(result.isPresent()) {						// if present 
+			Account account = result.get();					// account object hold that account details. 
+			return "Your balance amount is "+account.getAmount();
+		}else {
+			return "No account exists with account number as "+accno;
+		}
+	}
+	
+	public String withdrawn(Account account) {     // which contains accno and amount 
+		Optional<Account> result = accountRepository.findById(account.getAccno());	// passing account number 
+		if(result.isPresent()) {						// if present 
+			Account existsAccount = result.get();					// account object hold that account details. 
+			float oldAmount = existsAccount.getAmount();
+			float updateNewAmount = oldAmount-account.getAmount(); //1000-200
+			if(updateNewAmount<0) {
+					return "InSufficient amount can't withdraw";
+			}else {
+				existsAccount.setAmount(updateNewAmount);
+				accountRepository.saveAndFlush(existsAccount);
+				return "Amount withdrawn successfully";
+			}
+		}else {
+			return "Amount didn't withdraw, because account doesn't exists";
+		}
+	}
+	
+	public String deposit(Account account) {     // which contains accno and amount 
+		
+		Optional<Account> result = accountRepository.findById(account.getAccno());	// passing account number 
+		if(result.isPresent()) {						// if present 
+			Account existsAccount = result.get();					// account object hold that account details. 
+			float oldAmount = existsAccount.getAmount();
+			float updateNewAmount = oldAmount+account.getAmount(); //1000+200
+			existsAccount.setAmount(updateNewAmount);
+			accountRepository.saveAndFlush(existsAccount);
+			return "Amount deposited successfully";
+		}else {
+			return "Amount didn't deposite, because account doesn't exists";
+		}
+	}
+	
+	public int findAccountNumber(String emailid) {
+		try {
+			return accountRepository.findAccountNumber(emailid);
+		}catch(Exception e) {
+			System.err.println(e);
+			return -1;
+		}
+	}
 }
+
+
