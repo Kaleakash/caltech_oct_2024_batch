@@ -24,6 +24,7 @@ public class AccountController {	// // http://localhost:8383/transaction/*
 	// generic annotation we need to use method attribute with Get or Post or Put or Delete  
 	//@RequestMapping(value = "create",method = RequestMethod.POST,consumes = MediaType.APPLICATION_JSON_VALUE)
 	
+	// http://localhost:8383/account/create 
 	// method specific annotation 
 	@PostMapping(value = "create",consumes = MediaType.APPLICATION_JSON_VALUE)
 	public String createAccount(@RequestBody Account account) {
