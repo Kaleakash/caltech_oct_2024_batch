@@ -69,6 +69,7 @@ public class AccountService {
 	
 	public int findAccountNumber(String emailid) {
 		try {
+			System.out.println("Gpay Micro Service send the reqeust");
 			return accountRepository.findAccountNumber(emailid);
 		}catch(Exception e) {
 			System.err.println(e);

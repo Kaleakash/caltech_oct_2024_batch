@@ -2,6 +2,8 @@ package com.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,5 +27,12 @@ public class GpayController {
 	@PostMapping(value = "create",consumes = MediaType.APPLICATION_JSON_VALUE)
 	public String createAccount(@RequestBody Gpay gpay) {
 		return gpayService.createAccount(gpay);
+	}
+	
+	// http://localhost:8484/gpay/findBalance/steven@gmail.com
+	@GetMapping(value = "findBalance/{emailid}")
+	public String findBalance(@PathVariable("emailid") String emailid) {
+		return gpayService.findBalance(emailid);
+		
 	}
 }
