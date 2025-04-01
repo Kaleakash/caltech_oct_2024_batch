@@ -28,7 +28,8 @@ public class CabFareController {
 	// http://localhost:8282/cabfare/findFare/A/B
 	
 	@GetMapping(value = "findFare/{source}/{destination}")
-	public Float findCabFare(@PathVariable String source, @PathVariable String destination) {
-		return findCabFare(source, destination);
+	public float findCabFare(@PathVariable String source, @PathVariable String destination) {
+		System.out.println(source +" "+destination);
+		return cabFareService.findFare(source, destination);
 	}
 }
