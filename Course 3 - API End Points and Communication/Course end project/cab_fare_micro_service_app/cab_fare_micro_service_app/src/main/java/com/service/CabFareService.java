@@ -13,8 +13,15 @@ public class CabFareService {
 	CabFareRepository cabFareRepository;
 	
 	public String storeCabFareInfo(CabFare cb) {
-		cabFareRepository.save(cb);
-		return "Car Fare Information stored";
+		try {
+		cabFareRepository.findSourceAndDestination(cb.getSource(), cb.getDestination());
+		return "Alreay information present";
+		}catch(Exception e) {
+			System.err.println(e);
+			cabFareRepository.save(cb);
+			return "Car Fare Information stored";
+		}
+		
 	}
 	
 	public float findFare(String source, String destination) {

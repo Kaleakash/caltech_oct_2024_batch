@@ -12,4 +12,7 @@ public interface CabFareRepository extends JpaRepository<CabFare, Integer>{
 
 	@Query("select cf.fare from CabFare cf where cf.source = :source and cf.destination=:destination")
 	public float findFare(@Param("source") String source, @Param("destination") String destination);
+	
+	@Query("select cf.srno from CabFare cf where cf.source = :source and cf.destination=:destination")
+	public int findSourceAndDestination(@Param("source") String source, @Param("destination") String destination);
 }
