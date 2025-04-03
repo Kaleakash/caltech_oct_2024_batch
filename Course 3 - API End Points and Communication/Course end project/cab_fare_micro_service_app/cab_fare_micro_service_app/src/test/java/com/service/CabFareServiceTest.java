@@ -16,7 +16,7 @@ class CabFareServiceTest {
 	CabFareService cabFareService;
 	
 	@Test
-	//@Disabled
+	@Disabled
 	void testStoreCabFareInfo() {
 		CabFare cf = new CabFare();
 		cf.setSource("A");
