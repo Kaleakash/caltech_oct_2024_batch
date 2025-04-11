@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  akash-service:
+    image : akashkale/my-spring-boot:v1
+    ports:
+      - "9191:8080"
+  jun-service:
+    image: junbaek1004/my-spring-boot:v1
+    ports:
+      - "9192:8080"
+  ambrose-service:
+    image: ambroseminer/demospringindocker:v1
+    ports:
+      - "9193:8080" 
+  sameer-service:
+    image: sameerdocker3/mysbdockerimage04102025:v1
+    ports:
+      - "9494:8080"
