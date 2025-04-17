@@ -1,6 +1,6 @@
-version: "3.8"
+version: "3.8" 
 services:
- mysql-container:
+ mysql-container: # service name 
   image: mysql:8
   #container_name: mysql-container
   environment:
