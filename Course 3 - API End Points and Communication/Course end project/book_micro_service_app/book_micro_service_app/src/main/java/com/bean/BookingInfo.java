@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "BookingInfo")
+@Table(name = "bookinginfo")
 public class BookingInfo {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,7 +18,7 @@ private int bookingId;
 private String customerName;
 private String source;
 private String destination;
-private float price;
+private float price;				// we get the price from cab_fare micro service 
 public int getBookingId() {
 	return bookingId;
 }

@@ -14,19 +14,19 @@ public class CabFareService {
 	
 	public String storeCabFareInfo(CabFare cb) {
 		try {
-		cabFareRepository.findSourceAndDestination(cb.getSource(), cb.getDestination());
+		cabFareRepository.findSourceAndDestination(cb.getSource(), cb.getDestination()); // custom method 
 		return "Alreay information present";
 		}catch(Exception e) {
 			System.err.println(e);
-			cabFareRepository.save(cb);
-			return "Car Fare Information stored";
+			cabFareRepository.save(cb);			// pre-defined method 
+			return "Cab Fare Information stored";
 		}
 		
 	}
 	
 	public float findFare(String source, String destination) {
 		try {
-			return cabFareRepository.findFare(source, destination);
+			return cabFareRepository.findFare(source, destination);		// custom method 
 		} catch (Exception e) {
 			System.err.println(e);
 			return -1;

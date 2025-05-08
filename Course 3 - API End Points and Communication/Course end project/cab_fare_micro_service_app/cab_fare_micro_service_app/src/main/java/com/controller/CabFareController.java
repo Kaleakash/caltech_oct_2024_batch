@@ -12,20 +12,21 @@ import org.springframework.web.bind.annotation.RestController;
 import com.bean.CabFare;
 import com.service.CabFareService;
 
-@RestController
-@RequestMapping("cabfare")    // http://localhost:8282/cabfare/*
+@RestController						// testing these end point using post man client tool 
+@RequestMapping("cab")    // http://localhost:8282/cab/*
 public class CabFareController {
 
 	@Autowired
 	CabFareService cabFareService;
-	// http://localhost:8282/cabfare/create
-	
+	// http://localhost:8282/cab/create
+	// data {"source":"A","destination":"B","fare":10}
 	@PostMapping(value = "create",consumes = MediaType.APPLICATION_JSON_VALUE)
 	public String storeCabFareInfo(@RequestBody CabFare cabFare) {
 		return cabFareService.storeCabFareInfo(cabFare);
 	}
 	
-	// http://localhost:8282/cabfare/findFare/A/B
+	// http://localhost:8282/cab/findFare/A/B		10 
+	// http://localhost:8282/cab/findFare/A/C		-1 
 	
 	@GetMapping(value = "findFare/{source}/{destination}")
 	public float findCabFare(@PathVariable String source, @PathVariable String destination) {
