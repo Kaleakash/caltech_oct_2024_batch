@@ -2,6 +2,7 @@ package com.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +13,7 @@ import com.service.LoginService;
 
 @RestController
 @RequestMapping("login")	// http://localhost:9090/login/*
+@CrossOrigin			// allowing front end technologies to access that data.
 public class LoginController {
 	
 	@Autowired
