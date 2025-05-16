@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { LoginService } from '../login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent {
     typeofuser:new FormControl(''),
   })
 
-  constructor(public ls:LoginService) { }   // DI for LoginService 
+  constructor(public ls:LoginService,public router:Router) { }   // DI for LoginService 
   message:string =""
   signIn():void {
     let login = this.loginForm.value;
@@ -25,6 +26,21 @@ export class LoginComponent {
         next:(result)=> {
          // console.log(result)
          this.message = result;
+         if(login.emailid!=null){
+
+          if(result=="Admin login successfully"){
+            //sessionStorage.setItem("user",login.emailid);
+            this.router.navigate(['admin_home']);
+         }else if(result=="Customer login successfully"){
+          //alert(login.emailid)
+             sessionStorage.setItem("user",login.emailid);
+            this.router.navigate(['customer_home']);
+         }else {
+          this.message = result;
+         }
+         
+         }
+         
         },
         error:(error)=> {
           console.log(error)
