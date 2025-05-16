@@ -1,1 +1,17 @@
-<p>signup works!</p>
+<div>
+    <span style="color:red">{{message}}</span>
+    <h2>Account Create</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="signUp()">
+        <label>EmailId</label>
+        <input type="email" formControlName="emailid"/><br/>
+        <label>Password</label>
+        <input type="password" formControlName="password"/><br/>
+        <label>TypeOfUser</label>
+        <input type="radio" formControlName="typeofuser" value="admin"/>Admin
+        <input type="radio" formControlName="typeofuser" value="customer"/>Customer<br/>
+        <input type="submit" value="SignUp" />
+        <input type="reset" value="Reset" />
+    </form>
+    <br/>
+    <a routerLink="/">Login!</a>
+</div>

@@ -1,0 +1,13 @@
+
+<div>
+    <span style="color: red;">{{message}}</span>
+    <h2>Add Product</h2>
+    <form [formGroup]="productForm" (ngSubmit)="storeProduct()">
+        <label>PName</label>
+        <input type="text" formControlName="pname"/><br/>
+        <label>Price</label>
+        <input type="number" formControlName="price"/><br/>
+        <input type="submit" value="Store Product"/>
+        <input type="reset" value="reset"/>
+    </form>
+</div>

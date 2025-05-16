@@ -40,14 +40,14 @@ public class LoginService {
 	public String signUp(Login login) {		// emailid, password and typeof user if type of user is admin can't create account. 
 		Optional<Login> result = loginRepository.findById(login.getEmailid());
 		if(result.isPresent()) {
+				return "Account already exists";
+		}else {
 			if(login.getTypeofuser().equals("admin")) {
 				return "You can't create admin account";
 			}else {
-				return "Account already exists";
-			}	
-		}else {
 			loginRepository.save(login);
 			return "Account created successfully";
+			}
 		}
 	}
 }
