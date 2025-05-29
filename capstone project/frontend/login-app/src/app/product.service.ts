@@ -9,6 +9,7 @@ import { Product } from './product';
 export class ProductService {
 
 baseURL:string="http://localhost:9090/product";
+//baseURL:string="http://publicIpAddress:9090/product";
 
    // DI for HttpClient
 constructor(public httpClient:HttpClient) { }

@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  mysql-service:
+    image: mysql:8.0
+    container_name: mysql_container
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=capstonedb
+    ports:
+      - 3307:3306
+    restart: always
+  eureka-server:
+    build: ./backend/eureka-server/eureka-server/
+    container_name: eureka_container
+    ports:
+      - 8761:8761
+    restart: always
+  login-micro-service:
+    build: ./backend/Login-app/Login-app/
+    container_name: login_micro_service_container
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
+    ports:
+      - 9090:9090
+    depends_on:
+      - mysql-service
+      - eureka-server
+    restart: always
+  angular-service:
+    build: ./frontend/login-app/
+    container_name: angular_container
+    ports:
+      - 81:80
+   
+  
